@@ -9,16 +9,21 @@ export function Events() {
   const { events } = site;
 
   return (
-    <section id="eventos" className="scroll-mt-24 bg-champagne py-24 sm:py-32">
+    <section
+      id="eventos"
+      className="scroll-mt-24 overflow-hidden bg-champagne py-24 sm:py-32"
+    >
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <AnimatedReveal>
           <DecorativeFrame
             caption={events.speaker.caption}
             note={events.speaker.note}
+            eyebrow="Speaker"
+            surface="ivory"
           />
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
             <div>
-              <dt className="text-xs uppercase tracking-[0.22em] text-carbon/50">
+              <dt className="text-xs uppercase tracking-[0.22em] text-carbon/55">
                 Formatos
               </dt>
               <dd className="mt-1 font-display text-lg text-carbon">
@@ -26,7 +31,7 @@ export function Events() {
               </dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-[0.22em] text-carbon/50">
+              <dt className="text-xs uppercase tracking-[0.22em] text-carbon/55">
                 Modalidad
               </dt>
               <dd className="mt-1 font-display text-lg text-carbon">
@@ -45,7 +50,7 @@ export function Events() {
             {events.intro}
           </p>
 
-          <p className="mt-10 text-xs uppercase tracking-[0.24em] text-carbon/50">
+          <p className="mt-10 text-xs uppercase tracking-[0.24em] text-carbon/55">
             Temas que aborda
           </p>
           <ul className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
@@ -54,7 +59,10 @@ export function Events() {
                 key={topic}
                 className="flex items-center gap-3 text-base text-carbon/80"
               >
-                <span className="h-1 w-1 shrink-0 rounded-full bg-gold" aria-hidden />
+                <span
+                  className="h-1 w-1 shrink-0 rounded-full bg-gold"
+                  aria-hidden
+                />
                 {topic}
               </li>
             ))}

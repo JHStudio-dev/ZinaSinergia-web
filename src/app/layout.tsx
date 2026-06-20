@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -16,10 +16,31 @@ const instrument = Instrument_Sans({
   display: "swap",
 });
 
+const siteDescription =
+  "Marca personal de Zina Sinergia: coaching, conferencias y acompañamiento humano para reconectar con tu propósito y avanzar con intención.";
+
 export const metadata: Metadata = {
   title: "Zina Sinergia — Conecta. Inspira. Transforma.",
-  description:
-    "Marca personal de Zina Sinergia: coaching, conferencias y acompañamiento humano para reconectar con tu propósito y avanzar con intención.",
+  description: siteDescription,
+  keywords: [
+    "Zina Sinergia",
+    "coaching",
+    "conferencias",
+    "crecimiento personal",
+    "transformación",
+    "desarrollo personal",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    siteName: "Zina Sinergia",
+    title: "Zina Sinergia — Conecta. Inspira. Transforma.",
+    description: siteDescription,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f7f2ea",
 };
 
 export default function RootLayout({

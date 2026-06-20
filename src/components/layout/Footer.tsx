@@ -17,7 +17,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Navegación del pie" className="flex flex-col gap-3">
-            <p className="text-xs uppercase tracking-[0.24em] text-ivory/40">
+            <p className="text-xs uppercase tracking-[0.24em] text-ivory/55">
               Navegación
             </p>
             {site.nav.map((item) => (
@@ -32,7 +32,7 @@ export function Footer() {
           </nav>
 
           <div className="flex flex-col gap-3">
-            <p className="text-xs uppercase tracking-[0.24em] text-ivory/40">
+            <p className="text-xs uppercase tracking-[0.24em] text-ivory/55">
               Conecta
             </p>
             {site.footer.links.map((link) => {
@@ -54,10 +54,10 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-ivory/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-ivory/50">
+          <p className="text-xs text-ivory/60">
             © {year} {site.brand.name}. Todos los derechos reservados.
           </p>
-          <p className="text-xs text-ivory/40">{site.footer.credit}</p>
+          <p className="text-xs text-ivory/55">{site.footer.credit}</p>
         </div>
       </Container>
     </footer>

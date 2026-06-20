@@ -1,9 +1,21 @@
 type DecorativeFrameProps = {
   caption?: string;
   note?: string;
+  eyebrow?: string;
+  surface?: "champagne" | "ivory";
 };
 
-export function DecorativeFrame({ caption, note }: DecorativeFrameProps) {
+const surfaces = {
+  champagne: "bg-champagne",
+  ivory: "bg-ivory",
+};
+
+export function DecorativeFrame({
+  caption,
+  note,
+  eyebrow,
+  surface = "champagne",
+}: DecorativeFrameProps) {
   return (
     <div className="relative">
       <span
@@ -15,10 +27,18 @@ export function DecorativeFrame({ caption, note }: DecorativeFrameProps) {
         className="absolute -right-6 -top-6 hidden h-24 w-24 rounded-full border border-gold/25 sm:block"
       />
 
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.85rem] border border-sand/70 bg-champagne">
+      <div
+        className={`relative aspect-[4/5] overflow-hidden rounded-[1.85rem] border border-sand/70 ${surfaces[surface]}`}
+      >
+        {eyebrow ? (
+          <span className="absolute left-6 top-6 text-[0.65rem] uppercase tracking-[0.24em] text-carbon/55">
+            {eyebrow}
+          </span>
+        ) : null}
+
         <span
           aria-hidden
-          className="absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 font-display text-[7rem] leading-none text-carbon/10"
+          className="absolute left-1/2 top-[44%] -translate-x-1/2 -translate-y-1/2 font-display text-[7rem] leading-none text-carbon/10"
         >
           ZS
         </span>

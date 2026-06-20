@@ -31,7 +31,11 @@ export function Navbar() {
           : "border-b border-transparent"
       }`}
     >
-      <Container className="flex h-20 items-center justify-between">
+      <Container
+        className={`flex items-center justify-between transition-all duration-300 ${
+          scrolled ? "h-16" : "h-20"
+        }`}
+      >
         <a
           href="#inicio"
           className="group flex items-center gap-2.5"

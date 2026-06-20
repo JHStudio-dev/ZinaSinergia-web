@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative scroll-mt-24 overflow-hidden bg-ivory pt-32 pb-20 sm:pt-40 sm:pb-28"
+      className="relative flex min-h-[90svh] scroll-mt-24 items-center overflow-hidden bg-ivory pt-28 pb-24 lg:pt-32"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute right-[-12%] top-[-8%] h-[42rem] w-[42rem] rounded-full bg-[radial-gradient(circle,rgba(181,147,79,0.12),transparent_62%)] blur-2xl" />
@@ -22,7 +22,7 @@ export function Hero() {
       <Container className="relative grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-7">
           <AnimatedReveal>
-            <SectionLabel index="00">{hero.overline}</SectionLabel>
+            <SectionLabel>{hero.overline}</SectionLabel>
           </AnimatedReveal>
 
           <AnimatedReveal delay={90}>
@@ -58,7 +58,10 @@ export function Hero() {
               {hero.pillars.map((pillar, i) => (
                 <Fragment key={pillar}>
                   {i > 0 ? (
-                    <span className="h-1 w-1 rounded-full bg-gold/70" aria-hidden />
+                    <span
+                      className="h-1 w-1 rounded-full bg-gold/70"
+                      aria-hidden
+                    />
                   ) : null}
                   <span>{pillar}</span>
                 </Fragment>
@@ -76,6 +79,16 @@ export function Hero() {
           </AnimatedReveal>
         </div>
       </Container>
+
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-7 hidden justify-center lg:flex"
+      >
+        <span className="flex flex-col items-center gap-3 text-[0.65rem] uppercase tracking-[0.3em] text-carbon/45">
+          Scroll
+          <span className="hero-scroll-cue h-9 w-px bg-gradient-to-b from-gold/70 to-transparent" />
+        </span>
+      </div>
     </section>
   );
 }

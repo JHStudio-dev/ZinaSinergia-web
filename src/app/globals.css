@@ -25,6 +25,7 @@
     background-color: var(--color-ivory);
     color: var(--color-carbon);
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -35,10 +36,33 @@
     font-family: var(--font-display), ui-serif, Georgia, serif;
   }
 
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
   ::selection {
     background-color: color-mix(in srgb, var(--color-gold) 26%, transparent);
     color: var(--color-carbon);
   }
+}
+
+@keyframes scrollCue {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.65);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.hero-scroll-cue {
+  transform-origin: top center;
+  animation: scrollCue 2.6s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
