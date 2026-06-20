@@ -10,7 +10,7 @@ export function Events() {
   return (
     <section
       id="eventos"
-      className="scroll-mt-24 overflow-hidden bg-night py-24 sm:py-32"
+      className="scroll-mt-24 overflow-hidden bg-carbon py-24 sm:py-32"
     >
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <AnimatedReveal className="lg:col-span-5">

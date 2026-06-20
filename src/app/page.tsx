@@ -7,6 +7,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Hero } from "@/components/sections/Hero";
 import { ImpactAreas } from "@/components/sections/ImpactAreas";
 import { Method } from "@/components/sections/Method";
+import { Services } from "@/components/sections/Services";
 import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <About />
         <ImpactAreas />
         <Method />
+        <Services />
         <Events />
         <Testimonials />
         <Community />

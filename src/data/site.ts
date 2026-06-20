@@ -88,6 +88,75 @@ export const site = {
       },
     ],
   },
+  services: {
+    heading: "Planes pensados para tu crecimiento.",
+    intro:
+      "Acompañamiento para mujeres y equipos que quieren pasar de la intención a resultados concretos, con estrategia y cercanía.",
+    groups: [
+      {
+        id: "grupal",
+        kind: "Mentoría grupal",
+        title: "Mentoría grupal",
+        description:
+          "Un espacio colectivo para crecer en comunidad, con estructura y acompañamiento cercano.",
+        topics: [
+          "Mentalidad y liderazgo femenino",
+          "Branding, marketing y ventas",
+          "Finanzas y gestión de negocios",
+          "Innovación y modelos de negocio",
+        ],
+        cta: {
+          type: "whatsapp",
+          label: "Consultar por WhatsApp",
+          message:
+            "Hola Zina, me interesa la mentoría grupal. ¿Me compartes más información?",
+        },
+      },
+      {
+        id: "individual",
+        kind: "Individual",
+        title: "Desarrollo de negocios",
+        description:
+          "Sesiones uno a uno enfocadas en lo que necesitas resolver y avanzar ahora.",
+        topics: [
+          "Estructuración de ideas",
+          "Mentorías y liderazgo",
+          "Estrategia comercial",
+          "Marketing digital y marca personal",
+          "Habilidades prácticas y productividad",
+        ],
+        note: {
+          question: "¿Cómo funciona la dinámica de capacitación?",
+          answer:
+            "Tú eliges el tema: me dices qué habilidad o proyecto quieres trabajar hoy.",
+        },
+        cta: {
+          type: "whatsapp",
+          label: "Consultar por WhatsApp",
+          message:
+            "Hola Zina, me interesa la mentoría individual de desarrollo de negocios. ¿Me compartes más información?",
+        },
+      },
+      {
+        id: "empresarial",
+        kind: "Empresarial",
+        title: "Empresarial",
+        description:
+          "Programas para equipos y organizaciones que buscan trabajar mejor y crecer juntos.",
+        topics: [
+          "Productividad y ética operativa",
+          "Atención al cliente y experiencia del usuario",
+          "Liderazgo, clima laboral y trabajo en equipo",
+          "Sinergia organizacional",
+        ],
+        cta: {
+          type: "email",
+          label: "Escribir como empresa",
+          subject: "Consulta empresarial — Zina Sinergia",
+        },
+      },
+    ],
+  },
   events: {
     heading: "Lleva a Zina a tu escenario.",
     intro:
@@ -174,3 +243,14 @@ export const site = {
 } as const;
 
 export type Site = typeof site;
+
+export function whatsappUrl(message: string) {
+  const digits = site.contact.whatsapp.replace(/\D/g, "");
+  if (!digits) return "#contacto";
+  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
+}
+
+export function mailtoUrl(subject: string) {
+  if (!site.contact.email) return "#contacto";
+  return `mailto:${site.contact.email}?subject=${encodeURIComponent(subject)}`;
+}
