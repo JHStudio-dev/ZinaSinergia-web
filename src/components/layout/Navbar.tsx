@@ -2,13 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
+import { Wordmark } from "@/components/ui/Wordmark";
 import { site } from "@/data/site";
-
-const Wordmark = () => (
-  <span className="font-display text-xl tracking-tight text-carbon">
-    Zina <span className="text-gold">Sinergia</span>
-  </span>
-);
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
