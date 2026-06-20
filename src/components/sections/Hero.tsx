@@ -18,8 +18,7 @@ export function Hero() {
       className="relative flex min-h-[90svh] scroll-mt-24 items-center overflow-hidden bg-night pt-28 pb-24 lg:pt-32"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[-14%] top-[-6%] h-[44rem] w-[44rem] rounded-full bg-[radial-gradient(circle,rgba(191,157,87,0.18),transparent_62%)] blur-2xl" />
-        <div className="absolute bottom-[-22%] left-[-12%] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(179,101,79,0.12),transparent_65%)] blur-2xl" />
+        <div className="absolute right-[-14%] top-[-6%] h-[44rem] w-[44rem] rounded-full bg-[radial-gradient(circle,rgba(194,161,92,0.16),transparent_62%)] blur-2xl" />
       </div>
 
       <Container className="relative grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
