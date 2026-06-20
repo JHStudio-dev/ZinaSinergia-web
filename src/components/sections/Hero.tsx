@@ -4,10 +4,13 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { DecorativeFrame } from "@/components/ui/DecorativeFrame";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { site } from "@/data/site";
+import { isExternalHref, site, whatsappUrl } from "@/data/site";
 
 export function Hero() {
   const { hero } = site;
+  const primaryHref = whatsappUrl(
+    "Hola Zina, me gustaría agendar una conversación. ¿Cómo empezamos?",
+  );
 
   return (
     <section
@@ -41,7 +44,7 @@ export function Hero() {
 
           <AnimatedReveal delay={270}>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button href={hero.primaryCta.href}>
+              <Button href={primaryHref} external={isExternalHref(primaryHref)}>
                 {hero.primaryCta.label}
                 <span className="transition-transform duration-300 group-hover:translate-x-0.5">
                   →

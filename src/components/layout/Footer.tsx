@@ -1,9 +1,18 @@
 import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
-import { site } from "@/data/site";
+import { isExternalHref, mailtoUrl, site, whatsappUrl } from "@/data/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
+
+  const socials = [
+    { label: "Instagram", href: site.contact.instagram || "#contacto" },
+    {
+      label: "WhatsApp",
+      href: whatsappUrl("Hola Zina, me gustaría más información."),
+    },
+    { label: "Correo", href: mailtoUrl("Hola Zina") },
+  ];
 
   return (
     <footer className="bg-carbon text-ivory">
@@ -35,14 +44,14 @@ export function Footer() {
             <p className="text-xs uppercase tracking-[0.24em] text-ivory/55">
               Conecta
             </p>
-            {site.footer.links.map((link) => {
-              const isExternal = link.href.startsWith("http");
+            {socials.map((link) => {
+              const external = isExternalHref(link.href);
               return (
                 <a
                   key={link.label}
                   href={link.href}
                   className="w-fit text-sm text-ivory/75 transition-colors duration-300 hover:text-gold"
-                  {...(isExternal
+                  {...(external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
                 >

@@ -2,10 +2,13 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { site } from "@/data/site";
+import { isExternalHref, site, whatsappUrl } from "@/data/site";
 
 export function FinalCTA() {
   const { finalCta } = site;
+  const primaryHref = whatsappUrl(
+    "Hola Zina, me gustaría comenzar una conversación.",
+  );
 
   return (
     <section
@@ -28,7 +31,7 @@ export function FinalCTA() {
             {finalCta.subtitle}
           </p>
           <div className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href={finalCta.primary.href} external>
+            <Button href={primaryHref} external={isExternalHref(primaryHref)}>
               {finalCta.primary.label}
               <span className="transition-transform duration-300 group-hover:translate-x-0.5">
                 →

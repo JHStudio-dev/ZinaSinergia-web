@@ -3,12 +3,13 @@ export const site = {
     name: "Zina Sinergia",
     tagline: "Conecta. Inspira. Transforma.",
     description:
-      "Acompañamiento humano para procesos reales de cambio: coaching, conferencias y experiencias para reconectar con tu propósito y avanzar con intención.",
+      "Acompañamiento para mujeres que quieren crecer con propósito: coaching, mentorías y conferencias para tu desarrollo personal y profesional.",
   },
   nav: [
     { label: "Inicio", href: "#inicio" },
     { label: "Sobre Zina", href: "#sobre-zina" },
     { label: "Método", href: "#metodo" },
+    { label: "Servicios", href: "#servicios" },
     { label: "Eventos", href: "#eventos" },
     { label: "Contacto", href: "#contacto" },
   ],
@@ -17,52 +18,51 @@ export const site = {
     href: "#contacto",
   },
   hero: {
-    overline: "Coaching · Conferencias · Transformación",
+    overline: "Acompañamiento para mujeres",
     title: {
-      lead: "Reconecta con tu",
-      accent: "esencia",
-      tail: "y avanza con intención.",
+      lead: "Acompaño a mujeres que están listas para",
+      accent: "crecer",
+      tail: "con propósito y dirección.",
     },
     subtitle:
-      "Acompañamiento humano para procesos reales de cambio: un espacio para mirar hacia adentro, encontrar claridad y moverte hacia adelante.",
-    primaryCta: { label: "Agenda una conversación", href: "#contacto" },
-    secondaryCta: { label: "Conocer el método", href: "#metodo" },
+      "Coaching, mentorías y conferencias para tu desarrollo personal y profesional: claridad para liderar tu vida, tu carrera y tus proyectos.",
+    primaryCta: { label: "Agenda una conversación" },
+    secondaryCta: { label: "Ver los servicios", href: "#servicios" },
     pillars: ["Conecta", "Inspira", "Transforma"],
     portrait: { caption: "Zina Sinergia", note: "Coach · Conferencista" },
   },
   about: {
-    heading:
-      "Acompaño a personas que están listas para reencontrarse consigo mismas.",
-    lead: "Mi trabajo nace de una convicción simple: cuando una persona se escucha de verdad, encuentra la claridad para avanzar.",
-    body: "Desde el coaching, las conferencias y las experiencias que diseño, creo espacios donde la conexión humana se vuelve el punto de partida del cambio. No hay fórmulas ni discursos vacíos: hay presencia, escucha y un acompañamiento honesto para que cada quien reconozca su historia y dé el siguiente paso con propósito.",
+    heading: "Acompaño a mujeres que están listas para reencontrarse y crecer.",
+    lead: "Creo en algo simple: cuando una mujer se escucha de verdad, encuentra la claridad para avanzar.",
+    body: "Desde el coaching, las mentorías y las conferencias, creo espacios donde la conexión humana se vuelve el punto de partida del cambio. No hay fórmulas ni discursos vacíos: hay presencia, escucha y un acompañamiento honesto para que cada mujer reconozca su historia y dé el siguiente paso con propósito, en su vida y en su trabajo.",
     manifesto:
       "Creo en los procesos que se sienten. En volver a lo esencial para construir, desde ahí, una nueva versión de ti.",
     signature: "Zina",
   },
   impactAreas: {
-    heading: "En qué puedo acompañarte.",
+    heading: "En qué te acompaño.",
     intro:
-      "Cada espacio está pensado para encontrarte donde estás y moverte hacia donde quieres llegar.",
+      "Cuatro frentes para crecer con claridad, en tu vida y en tu trabajo.",
     items: [
       {
-        title: "Coaching personal",
+        title: "Liderazgo femenino",
         description:
-          "Procesos uno a uno para ganar claridad, ordenar tu historia y avanzar con decisiones que te representan.",
+          "Reconocer tu voz y tu forma de liderar, con seguridad y sin perderte en el camino.",
       },
       {
-        title: "Conferencias",
+        title: "Claridad y propósito",
         description:
-          "Charlas que conectan con la audiencia desde lo humano y dejan una idea que permanece.",
+          "Ordenar tu historia para decidir desde lo que de verdad quieres construir.",
       },
       {
-        title: "Talleres y experiencias",
+        title: "Crecimiento profesional",
         description:
-          "Encuentros grupales para reconectar, reflexionar y llevarte herramientas que se aplican a la vida real.",
+          "Pasar de la intención a la estrategia para hacer crecer tu carrera o tu proyecto.",
       },
       {
-        title: "Acompañamiento para transformación",
+        title: "Transformación personal",
         description:
-          "Un proceso sostenido para cambiar patrones y consolidar, paso a paso, la versión de ti que estás construyendo.",
+          "Cambiar patrones y sostener, paso a paso, la versión de ti que estás creando.",
       },
     ],
   },
@@ -216,24 +216,19 @@ export const site = {
           "Recursos prácticos para sostener tu proceso entre una etapa y la siguiente.",
       },
     ],
-    cta: { label: "Seguir en Instagram", href: "#" },
+    cta: { label: "Seguir en Instagram" },
   },
   finalCta: {
     overline: "Da el primer paso",
     heading: "Tu próximo capítulo empieza por una conversación.",
     subtitle:
       "Cuéntame dónde estás y hacia dónde quieres ir. Desde ahí construimos el camino, a tu ritmo.",
-    primary: { label: "Escríbeme por WhatsApp", href: "#" },
+    primary: { label: "Escríbeme por WhatsApp" },
     secondary: { label: "Invitar a un evento", href: "#eventos" },
   },
   footer: {
     tagline: "Conecta. Inspira. Transforma.",
     credit: "Diseño y desarrollo por Darkward Studio",
-    links: [
-      { label: "Instagram", href: "#" },
-      { label: "WhatsApp", href: "#" },
-      { label: "Correo", href: "#" },
-    ],
   },
   contact: {
     whatsapp: "",
@@ -253,4 +248,8 @@ export function whatsappUrl(message: string) {
 export function mailtoUrl(subject: string) {
   if (!site.contact.email) return "#contacto";
   return `mailto:${site.contact.email}?subject=${encodeURIComponent(subject)}`;
+}
+
+export function isExternalHref(href: string) {
+  return href.startsWith("http");
 }

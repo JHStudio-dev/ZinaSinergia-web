@@ -45,7 +45,7 @@ export function Navbar() {
           <Wordmark tone="dark" />
         </a>
 
-        <nav className="hidden items-center gap-9 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {site.nav.map((item) => (
             <a
               key={item.href}

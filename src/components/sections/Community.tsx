@@ -2,10 +2,11 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { site } from "@/data/site";
+import { isExternalHref, site } from "@/data/site";
 
 export function Community() {
   const { community } = site;
+  const instagramHref = site.contact.instagram || "#contacto";
 
   return (
     <section id="comunidad" className="scroll-mt-24 bg-carbon py-24 sm:py-32">
@@ -36,7 +37,11 @@ export function Community() {
         </AnimatedReveal>
 
         <div className="mt-12 flex justify-center">
-          <Button href={community.cta.href} variant="secondary" external>
+          <Button
+            href={instagramHref}
+            variant="secondary"
+            external={isExternalHref(instagramHref)}
+          >
             {community.cta.label}
           </Button>
         </div>
