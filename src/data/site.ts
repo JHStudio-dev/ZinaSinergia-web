@@ -16,6 +16,20 @@ export const site = {
     label: "Conectar",
     href: "#contacto",
   },
+  hero: {
+    overline: "Coaching · Conferencias · Transformación",
+    title: {
+      lead: "Reconecta con tu",
+      accent: "esencia",
+      tail: "y avanza con intención.",
+    },
+    subtitle:
+      "Acompañamiento humano para procesos reales de cambio: un espacio para mirar hacia adentro, encontrar claridad y moverte hacia adelante.",
+    primaryCta: { label: "Agenda una conversación", href: "#contacto" },
+    secondaryCta: { label: "Conocer el método", href: "#metodo" },
+    pillars: ["Conecta", "Inspira", "Transforma"],
+    portrait: { caption: "Zina Sinergia", note: "Coach · Conferencista" },
+  },
   method: [
     {
       key: "conecta",
