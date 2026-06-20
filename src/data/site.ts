@@ -18,18 +18,21 @@ export const site = {
     href: "#contacto",
   },
   hero: {
-    overline: "Acompañamiento para mujeres",
     title: {
-      lead: "Acompaño a mujeres que están listas para",
-      accent: "crecer",
-      tail: "con propósito y dirección.",
+      line1: "Tu siguiente etapa",
+      line2: "necesita dirección.",
     },
     subtitle:
-      "Coaching, mentorías y conferencias para tu desarrollo personal y profesional: claridad para liderar tu vida, tu carrera y tus proyectos.",
+      "Mentorías, conferencias y experiencias para mujeres que quieren fortalecer su liderazgo, su visión y sus proyectos con claridad.",
     primaryCta: { label: "Agenda una conversación" },
     secondaryCta: { label: "Ver los servicios", href: "#servicios" },
-    pillars: ["Conecta", "Inspira", "Transforma"],
-    portrait: { caption: "Zina Sinergia", note: "Coach · Conferencista" },
+    signature: ["Mentalidad", "Liderazgo", "Marca personal", "Negocios"],
+    aside: "Mujeres que lideran su camino",
+    panel: {
+      monogram: "ZS",
+      phrase: ["Presencia,", "claridad y", "dirección."],
+      roles: ["Coach", "Conferencista", "Mentora"],
+    },
   },
   about: {
     heading: "Acompaño a mujeres que están listas para reencontrarse y crecer.",

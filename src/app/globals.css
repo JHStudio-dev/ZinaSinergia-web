@@ -49,21 +49,14 @@
   }
 }
 
-@keyframes scrollCue {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scaleY(0.65);
+@layer components {
+  .zs-vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+    letter-spacing: 0.36em;
+    white-space: nowrap;
   }
-  50% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-}
-
-.hero-scroll-cue {
-  transform-origin: top center;
-  animation: scrollCue 2.6s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
