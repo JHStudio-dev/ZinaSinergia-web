@@ -57,6 +57,88 @@
     letter-spacing: 0.36em;
     white-space: nowrap;
   }
+
+  .zs-hero__texture {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(245, 239, 227, 0.6) 1px,
+      transparent 0
+    );
+    background-size: 3px 3px;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 16%,
+      #000 84%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 16%,
+      #000 84%,
+      transparent
+    );
+  }
+
+  .zs-hero__glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      38rem 38rem at 86% 4%,
+      rgba(194, 161, 92, 0.07),
+      transparent 62%
+    );
+  }
+
+  .zs-hero__waves {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 64%;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+      radial-gradient(70% 120% at 100% 6%, rgba(194, 161, 92, 0.1), transparent 55%),
+      radial-gradient(60% 100% at 122% 54%, rgba(194, 161, 92, 0.05), transparent 60%),
+      radial-gradient(80% 120% at 96% 106%, rgba(194, 161, 92, 0.07), transparent 55%);
+    -webkit-mask-image: linear-gradient(to left, #000 58%, transparent);
+    mask-image: linear-gradient(to left, #000 58%, transparent);
+  }
+
+  .zs-hero__waves::before,
+  .zs-hero__waves::after {
+    content: "";
+    position: absolute;
+    inset: -28%;
+    filter: blur(0.4px);
+  }
+
+  .zs-hero__waves::before {
+    background: repeating-radial-gradient(
+      ellipse 55% 130% at 134% 16%,
+      transparent 0 22px,
+      rgba(194, 161, 92, 0.16) 22px 23px
+    );
+    opacity: 0.55;
+    -webkit-mask-image: radial-gradient(82% 90% at 100% 38%, #000 6%, transparent 70%);
+    mask-image: radial-gradient(82% 90% at 100% 38%, #000 6%, transparent 70%);
+  }
+
+  .zs-hero__waves::after {
+    background: repeating-radial-gradient(
+      ellipse 62% 120% at 100% 124%,
+      transparent 0 27px,
+      rgba(194, 161, 92, 0.11) 27px 28px
+    );
+    opacity: 0.45;
+    -webkit-mask-image: radial-gradient(85% 85% at 100% 62%, #000 6%, transparent 72%);
+    mask-image: radial-gradient(85% 85% at 100% 62%, #000 6%, transparent 72%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -15,42 +15,9 @@ export function Hero() {
       id="inicio"
       className="relative flex min-h-[100svh] scroll-mt-24 items-center overflow-hidden bg-night pt-24 pb-16"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-[6%] top-[6%] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(194,161,92,0.08),transparent_60%)] blur-3xl"
-      />
-
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 w-[82%] opacity-70 sm:w-[64%] lg:w-[56%]"
-      >
-        <svg
-          viewBox="0 0 500 760"
-          preserveAspectRatio="xMidYMid slice"
-          className="h-full w-full"
-        >
-          <defs>
-            <linearGradient id="zsLine" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#c2a15c" stopOpacity="0" />
-              <stop offset="0.45" stopColor="#d8ba6c" stopOpacity="0.85" />
-              <stop offset="1" stopColor="#c2a15c" stopOpacity="0" />
-            </linearGradient>
-            <path
-              id="zsFlow"
-              d="M 320 -40 C 140 160 360 320 230 480 C 130 610 300 720 210 880"
-              fill="none"
-              stroke="url(#zsLine)"
-              strokeWidth="1"
-              vectorEffect="non-scaling-stroke"
-            />
-          </defs>
-          <g>
-            {[-52, -16, 20, 56, 92, 128, 164, 200, 236, 272].map((x) => (
-              <use key={x} href="#zsFlow" transform={`translate(${x},0)`} />
-            ))}
-          </g>
-        </svg>
-      </div>
+      <div aria-hidden className="zs-hero__texture" />
+      <div aria-hidden className="zs-hero__glow" />
+      <div aria-hidden className="zs-hero__waves" />
 
       <Container className="relative z-10 grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-6">
