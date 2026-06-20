@@ -2,8 +2,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { About } from "@/components/sections/About";
 import { Community } from "@/components/sections/Community";
+import { Contact } from "@/components/sections/Contact";
 import { Events } from "@/components/sections/Events";
-import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Hero } from "@/components/sections/Hero";
 import { ImpactAreas } from "@/components/sections/ImpactAreas";
 import { Method } from "@/components/sections/Method";
@@ -23,7 +23,7 @@ export default function Home() {
         <Events />
         <Testimonials />
         <Community />
-        <FinalCTA />
+        <Contact />
       </main>
       <Footer />
     </>

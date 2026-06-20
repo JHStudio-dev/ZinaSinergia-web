@@ -218,13 +218,13 @@ export const site = {
     ],
     cta: { label: "Seguir en Instagram" },
   },
-  finalCta: {
-    overline: "Da el primer paso",
-    heading: "Tu próximo capítulo empieza por una conversación.",
-    subtitle:
-      "Cuéntame dónde estás y hacia dónde quieres ir. Desde ahí construimos el camino, a tu ritmo.",
-    primary: { label: "Escríbeme por WhatsApp" },
-    secondary: { label: "Invitar a un evento", href: "#eventos" },
+  contactSection: {
+    eyebrow: "Contacto",
+    heading: "Hablemos de tu próximo paso.",
+    text: "Cuéntame dónde estás y hacia dónde quieres ir. Te leo y te respondo personalmente.",
+    responseTime: "24 a 48 horas",
+    modality: "Online y presencial",
+    submitLabel: "Enviar mensaje",
   },
   footer: {
     tagline: "Conecta. Inspira. Transforma.",
@@ -233,7 +233,7 @@ export const site = {
   contact: {
     whatsapp: "",
     instagram: "",
-    email: "",
+    email: "hola@zinasinergia.com",
   },
 } as const;
 
