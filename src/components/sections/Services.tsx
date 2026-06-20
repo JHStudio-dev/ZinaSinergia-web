@@ -30,7 +30,7 @@ export function Services() {
       <Container>
         <AnimatedReveal className="max-w-2xl">
           <SectionLabel>Servicios</SectionLabel>
-          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-ivory sm:text-5xl">
+          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-gold sm:text-5xl">
             {services.heading}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ivory/70 sm:text-lg">
@@ -45,7 +45,7 @@ export function Services() {
                 <span className="text-xs uppercase tracking-[0.24em] text-gold">
                   {featured.kind}
                 </span>
-                <h3 className="mt-4 font-display text-3xl text-ivory sm:text-4xl">
+                <h3 className="mt-4 font-display text-3xl text-gold sm:text-4xl">
                   {featured.title}
                 </h3>
                 <p className="mt-4 max-w-md text-base leading-relaxed text-ivory/70">
@@ -86,7 +86,7 @@ export function Services() {
                     <span className="text-xs uppercase tracking-[0.24em] text-gold">
                       {group.kind}
                     </span>
-                    <h3 className="mt-4 font-display text-2xl text-ivory sm:text-3xl">
+                    <h3 className="mt-4 font-display text-2xl text-gold sm:text-3xl">
                       {group.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-ivory/65">

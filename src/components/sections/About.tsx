@@ -12,7 +12,7 @@ export function About() {
         <div className="lg:col-span-5">
           <AnimatedReveal>
             <SectionLabel>Sobre Zina</SectionLabel>
-            <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-ivory sm:text-5xl">
+            <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-gold sm:text-5xl">
               {about.heading}
             </h2>
           </AnimatedReveal>
@@ -20,7 +20,7 @@ export function About() {
 
         <div className="lg:col-span-7 lg:pt-2">
           <AnimatedReveal delay={120}>
-            <p className="font-display text-2xl italic leading-snug text-gold sm:text-3xl">
+            <p className="font-display text-2xl italic leading-snug text-ivory/90 sm:text-3xl">
               {about.lead}
             </p>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-ivory/70 sm:text-lg">

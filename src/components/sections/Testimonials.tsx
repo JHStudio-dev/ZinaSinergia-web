@@ -12,7 +12,7 @@ export function Testimonials() {
       <Container>
         <AnimatedReveal className="max-w-2xl">
           <SectionLabel>Testimonios</SectionLabel>
-          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-ivory sm:text-5xl">
+          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-gold sm:text-5xl">
             {testimonials.heading}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ivory/70 sm:text-lg">

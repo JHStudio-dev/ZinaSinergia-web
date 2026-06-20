@@ -11,7 +11,7 @@ export function SectionLabel({
   tone = "onDark",
   className = "",
 }: SectionLabelProps) {
-  const textColor = tone === "onLight" ? "text-carbon/60" : "text-ivory/65";
+  const textColor = tone === "onLight" ? "text-carbon/60" : "text-gold";
 
   return (
     <span

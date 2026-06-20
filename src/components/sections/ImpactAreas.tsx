@@ -12,7 +12,7 @@ export function ImpactAreas() {
         <div className="lg:col-span-4">
           <AnimatedReveal>
             <SectionLabel>Enfoque</SectionLabel>
-            <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-ivory sm:text-5xl">
+            <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-gold sm:text-5xl">
               {impactAreas.heading}
             </h2>
             <p className="mt-5 max-w-sm text-base leading-relaxed text-ivory/65">

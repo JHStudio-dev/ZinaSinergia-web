@@ -15,7 +15,7 @@ export function Events() {
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <AnimatedReveal className="lg:col-span-5">
           <SectionLabel>Conferencias</SectionLabel>
-          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.08] tracking-tight text-ivory sm:text-5xl">
+          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.08] tracking-tight text-gold sm:text-5xl">
             {events.heading}
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-ivory/70 sm:text-lg">
@@ -52,14 +52,15 @@ export function Events() {
               Temas que aborda
             </p>
             <ul className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-2">
-              {events.topics.map((topic, i) => (
+              {events.topics.map((topic) => (
                 <li
                   key={topic}
-                  className="flex items-baseline gap-4 border-t border-ivory/10 pt-4 text-ivory/85"
+                  className="flex items-center gap-3 border-t border-ivory/10 pt-4 text-ivory/85"
                 >
-                  <span className="font-display text-sm tabular-nums text-gold/80">
-                    0{i + 1}
-                  </span>
+                  <span
+                    className="h-1 w-1 shrink-0 rounded-full bg-gold"
+                    aria-hidden
+                  />
                   <span className="text-base leading-snug">{topic}</span>
                 </li>
               ))}

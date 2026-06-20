@@ -15,7 +15,7 @@ export function Community() {
           <div className="flex justify-center">
             <SectionLabel>Comunidad</SectionLabel>
           </div>
-          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-ivory sm:text-5xl">
+          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-gold sm:text-5xl">
             {community.heading}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-ivory/70 sm:text-lg">
