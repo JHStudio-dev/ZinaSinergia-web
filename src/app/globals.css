@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ivory: #f7f2ea;
+  --color-night: #14110b;
+  --color-carbon: #1e1a13;
+  --color-ivory: #f5efe3;
   --color-champagne: #ece1ce;
   --color-sand: #e2d4bb;
-  --color-carbon: #1c1a16;
-  --color-gold: #b5934f;
-  --color-clay: #a85c4a;
+  --color-gold: #bf9d57;
+  --color-clay: #b3654f;
 
   --font-display: var(--font-cormorant);
   --font-sans: var(--font-instrument);
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 @layer base {
@@ -22,8 +23,8 @@
   }
 
   body {
-    background-color: var(--color-ivory);
-    color: var(--color-carbon);
+    background-color: var(--color-night);
+    color: var(--color-ivory);
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -43,8 +44,8 @@
   }
 
   ::selection {
-    background-color: color-mix(in srgb, var(--color-gold) 26%, transparent);
-    color: var(--color-carbon);
+    background-color: color-mix(in srgb, var(--color-gold) 32%, transparent);
+    color: var(--color-ivory);
   }
 }
 

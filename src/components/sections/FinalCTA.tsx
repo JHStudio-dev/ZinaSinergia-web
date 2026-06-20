@@ -10,16 +10,16 @@ export function FinalCTA() {
   return (
     <section
       id="contacto"
-      className="relative scroll-mt-24 overflow-hidden bg-carbon py-28 text-ivory sm:py-36"
+      className="relative scroll-mt-24 overflow-hidden bg-night py-28 sm:py-36"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[-30%] h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(181,147,79,0.16),transparent_60%)] blur-2xl" />
+        <div className="absolute left-1/2 top-[-28%] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(191,157,87,0.2),transparent_60%)] blur-2xl" />
       </div>
 
       <Container className="relative">
         <AnimatedReveal className="mx-auto max-w-3xl text-center">
           <div className="flex justify-center">
-            <SectionLabel tone="dark">{finalCta.overline}</SectionLabel>
+            <SectionLabel>{finalCta.overline}</SectionLabel>
           </div>
           <h2 className="mt-8 font-display text-4xl font-medium leading-[1.06] tracking-tight text-ivory sm:text-6xl">
             {finalCta.heading}
@@ -28,13 +28,13 @@ export function FinalCTA() {
             {finalCta.subtitle}
           </p>
           <div className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href={finalCta.primary.href} tone="dark" external>
+            <Button href={finalCta.primary.href} external>
               {finalCta.primary.label}
               <span className="transition-transform duration-300 group-hover:translate-x-0.5">
                 →
               </span>
             </Button>
-            <Button href={finalCta.secondary.href} tone="dark" variant="secondary">
+            <Button href={finalCta.secondary.href} variant="secondary">
               {finalCta.secondary.label}
             </Button>
           </div>

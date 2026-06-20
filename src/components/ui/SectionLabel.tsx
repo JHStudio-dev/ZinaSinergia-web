@@ -1,17 +1,17 @@
 type SectionLabelProps = {
   index?: string;
   children: string;
-  tone?: "light" | "dark";
+  tone?: "onDark" | "onLight";
   className?: string;
 };
 
 export function SectionLabel({
   index,
   children,
-  tone = "light",
+  tone = "onDark",
   className = "",
 }: SectionLabelProps) {
-  const textColor = tone === "dark" ? "text-ivory/65" : "text-carbon/60";
+  const textColor = tone === "onLight" ? "text-carbon/60" : "text-ivory/65";
 
   return (
     <span

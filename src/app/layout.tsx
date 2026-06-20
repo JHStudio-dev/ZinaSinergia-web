@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f7f2ea",
+  themeColor: "#14110b",
 };
 
 export default function RootLayout({
@@ -53,7 +53,7 @@ export default function RootLayout({
       lang="es"
       className={`${cormorant.variable} ${instrument.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-ivory text-carbon">{children}</body>
+      <body className="min-h-full bg-night text-ivory">{children}</body>
     </html>
   );
 }

@@ -4,7 +4,6 @@ type ButtonProps = {
   href: string;
   children: ReactNode;
   variant?: "primary" | "secondary";
-  tone?: "light" | "dark";
   external?: boolean;
   className?: string;
 };
@@ -12,26 +11,17 @@ type ButtonProps = {
 const base =
   "group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-wide transition-all duration-300 will-change-transform";
 
-const styles = {
-  light: {
-    primary:
-      "bg-carbon text-ivory hover:-translate-y-0.5 hover:bg-carbon/90 hover:shadow-[0_12px_30px_-12px_rgba(28,26,22,0.45)]",
-    secondary:
-      "border border-carbon/15 text-carbon hover:-translate-y-0.5 hover:border-gold/60",
-  },
-  dark: {
-    primary:
-      "bg-ivory text-carbon hover:-translate-y-0.5 hover:bg-ivory/90 hover:shadow-[0_14px_34px_-14px_rgba(0,0,0,0.6)]",
-    secondary:
-      "border border-ivory/25 text-ivory hover:-translate-y-0.5 hover:border-gold/70",
-  },
+const variants = {
+  primary:
+    "bg-gold text-night hover:-translate-y-0.5 hover:bg-gold/90 hover:shadow-[0_16px_40px_-16px_rgba(191,157,87,0.55)]",
+  secondary:
+    "border border-ivory/25 text-ivory hover:-translate-y-0.5 hover:border-gold/70 hover:text-gold",
 };
 
 export function Button({
   href,
   children,
   variant = "primary",
-  tone = "light",
   external = false,
   className = "",
 }: ButtonProps) {
@@ -42,7 +32,7 @@ export function Button({
   return (
     <a
       href={href}
-      className={`${base} ${styles[tone][variant]} ${className}`}
+      className={`${base} ${variants[variant]} ${className}`}
       {...externalProps}
     >
       {children}
