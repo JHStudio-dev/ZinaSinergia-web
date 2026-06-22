@@ -13,17 +13,22 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-[100svh] scroll-mt-24 items-center overflow-hidden bg-night pt-24 pb-16"
+      className="relative flex min-h-[100svh] scroll-mt-24 items-center overflow-hidden bg-night pt-28 pb-20"
     >
       <div aria-hidden className="zs-hero__texture" />
       <div aria-hidden className="zs-hero__glow" />
       <div aria-hidden className="zs-hero__waves">
-        <svg viewBox="0 0 520 760" preserveAspectRatio="xMidYMid slice">
+        <svg viewBox="0 0 560 820" preserveAspectRatio="xMidYMid slice">
           <defs>
-            <linearGradient id="zsFold" x1="0" y1="0" x2="0.3" y2="1">
+            <linearGradient id="zsFold" x1="0" y1="0" x2="0.25" y2="1">
               <stop offset="0" stopColor="#c2a15c" stopOpacity="0" />
-              <stop offset="0.4" stopColor="#e6cd8b" stopOpacity="0.9" />
-              <stop offset="0.64" stopColor="#c2a15c" stopOpacity="0.45" />
+              <stop offset="0.38" stopColor="#e6cd8b" stopOpacity="0.85" />
+              <stop offset="0.62" stopColor="#c2a15c" stopOpacity="0.4" />
+              <stop offset="1" stopColor="#c2a15c" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="zsFoldDim" x1="0" y1="0" x2="0.25" y2="1">
+              <stop offset="0" stopColor="#c2a15c" stopOpacity="0" />
+              <stop offset="0.5" stopColor="#c2a15c" stopOpacity="0.22" />
               <stop offset="1" stopColor="#c2a15c" stopOpacity="0" />
             </linearGradient>
             <path
@@ -37,40 +42,64 @@ export function Hero() {
           </defs>
           <g
             fill="none"
+            stroke="url(#zsFoldDim)"
+            strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+          >
+            <use href="#zsFoldA" transform="translate(-70 0)" />
+            <use href="#zsFoldB" transform="translate(-30 0)" />
+            <use href="#zsFoldA" transform="translate(12 0)" />
+          </g>
+          <g
+            fill="none"
             stroke="url(#zsFold)"
             strokeWidth="1.1"
             vectorEffect="non-scaling-stroke"
           >
-            <use href="#zsFoldA" transform="translate(-40 0)" />
-            <use href="#zsFoldB" transform="translate(-12 0)" />
-            <use href="#zsFoldA" transform="translate(24 0)" />
-            <use href="#zsFoldB" transform="translate(60 0)" />
+            <use href="#zsFoldB" transform="translate(54 0)" />
             <use href="#zsFoldA" transform="translate(98 0)" />
-            <use href="#zsFoldB" transform="translate(140 0)" />
-            <use href="#zsFoldA" transform="translate(186 0)" />
-            <use href="#zsFoldB" transform="translate(234 0)" />
-            <use href="#zsFoldA" transform="translate(284 0)" />
+            <use href="#zsFoldB" transform="translate(142 0)" />
+            <use href="#zsFoldA" transform="translate(190 0)" />
+            <use href="#zsFoldB" transform="translate(238 0)" />
+            <use href="#zsFoldA" transform="translate(288 0)" />
+            <use href="#zsFoldB" transform="translate(338 0)" />
           </g>
         </svg>
       </div>
 
-      <Container className="relative z-10 grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-8">
-        <div className="lg:col-span-6">
+      <Container className="relative z-10 w-full">
+        <div className="max-w-3xl">
           <AnimatedReveal>
-            <h1 className="font-display text-[2.6rem] font-medium leading-[1.05] tracking-tight text-ivory sm:text-5xl lg:text-6xl">
-              <span className="block">{hero.title.line1}</span>
-              <span className="block">{hero.title.line2}</span>
-            </h1>
-          </AnimatedReveal>
-
-          <AnimatedReveal delay={120}>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-ivory/65 sm:text-[1.05rem]">
-              {hero.subtitle}
+            <p className="mb-7 flex items-center gap-3 text-[0.72rem] uppercase tracking-[0.34em] text-ivory/55">
+              <span className="zs-tick h-4" />
+              {hero.lead}
             </p>
           </AnimatedReveal>
 
-          <AnimatedReveal delay={210}>
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <AnimatedReveal delay={80}>
+            <h1 className="font-display text-[2.9rem] font-medium leading-[1.04] tracking-tight text-ivory sm:text-6xl lg:text-[4.6rem]">
+              <span className="block">{hero.title.line1}</span>
+              <span className="block">
+                {hero.title.line2}{" "}
+                <span className="text-gold">{hero.title.accent}</span>
+              </span>
+            </h1>
+          </AnimatedReveal>
+
+          <AnimatedReveal delay={160}>
+            <div className="mt-8 flex items-start gap-5">
+              <span
+                aria-hidden
+                className="mt-3.5 hidden h-px w-12 shrink-0 bg-gradient-to-r from-gold to-transparent sm:block"
+              />
+              <p className="max-w-xl text-base leading-relaxed text-ivory/70 sm:text-[1.05rem]">
+                {hero.subtitle}
+              </p>
+            </div>
+          </AnimatedReveal>
+
+          <AnimatedReveal delay={240}>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button href={primaryHref} external>
                 {hero.primaryCta.label}
                 <span className="transition-transform duration-300 group-hover:translate-x-0.5">
@@ -83,51 +112,19 @@ export function Hero() {
             </div>
           </AnimatedReveal>
 
-          <AnimatedReveal delay={300}>
-            <div className="mt-10 max-w-lg border-t border-ivory/10 pt-5">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[0.72rem] uppercase tracking-[0.2em] text-ivory/55">
-                {hero.signature.map((item, i) => (
-                  <Fragment key={item}>
-                    {i > 0 ? (
-                      <span className="text-gold/50" aria-hidden>
-                        /
-                      </span>
-                    ) : null}
-                    <span>{item}</span>
-                  </Fragment>
-                ))}
-              </div>
-            </div>
-          </AnimatedReveal>
-        </div>
-
-        <div className="hidden justify-center lg:col-span-1 lg:flex">
-          <span className="zs-vertical-text text-[0.68rem] text-gold/45">
-            {hero.aside}
-          </span>
-        </div>
-
-        <div className="lg:col-span-5">
-          <AnimatedReveal delay={180}>
-            <div className="relative mx-auto w-full max-w-sm rounded-[2.25rem] border border-gold/30 bg-gradient-to-b from-white/[0.04] to-transparent p-8 sm:p-10">
-              <div className="flex min-h-[22rem] flex-col sm:min-h-[26rem]">
-                <span className="font-display text-2xl tracking-[0.16em] text-gold/85">
-                  {hero.panel.monogram}
-                </span>
-
-                <p className="my-auto font-display text-3xl leading-[1.12] text-ivory sm:text-4xl">
-                  {hero.panel.phrase.map((line, i) => (
-                    <Fragment key={line}>
-                      {i > 0 ? <br /> : null}
-                      {line}
-                    </Fragment>
-                  ))}
-                </p>
-
-                <div className="mt-8 border-t border-gold/20 pt-5 text-[0.7rem] uppercase tracking-[0.22em] text-gold/85">
-                  {hero.panel.roles.join(" · ")}
-                </div>
-              </div>
+          <AnimatedReveal delay={320}>
+            <div className="mt-14 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-ivory/10 pt-6 text-[0.78rem] tracking-wide text-ivory/60">
+              {hero.signature.map((item, i) => (
+                <Fragment key={item}>
+                  {i > 0 ? (
+                    <span
+                      aria-hidden
+                      className="h-1 w-1 rounded-full bg-gold/55"
+                    />
+                  ) : null}
+                  <span>{item}</span>
+                </Fragment>
+              ))}
             </div>
           </AnimatedReveal>
         </div>
@@ -135,9 +132,11 @@ export function Hero() {
 
       <span
         aria-hidden
-        className="absolute bottom-6 right-6 text-lg text-gold/55"
+        className="absolute right-5 top-1/2 hidden -translate-y-1/2 lg:block"
       >
-        
+        <span className="zs-vertical-text text-[0.66rem] text-gold/40">
+          {hero.aside}
+        </span>
       </span>
     </section>
   );

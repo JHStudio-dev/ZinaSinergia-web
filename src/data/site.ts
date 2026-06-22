@@ -18,9 +18,11 @@ export const site = {
     href: "#contacto",
   },
   hero: {
+    lead: "Coach · Conferencista · Mentora",
     title: {
       line1: "Tu siguiente etapa",
-      line2: "necesita dirección.",
+      line2: "necesita",
+      accent: "dirección.",
     },
     subtitle:
       "Mentorías, conferencias y experiencias para mujeres que quieren fortalecer su liderazgo, su visión y sus proyectos con claridad.",
@@ -28,11 +30,6 @@ export const site = {
     secondaryCta: { label: "Ver los servicios", href: "#servicios" },
     signature: ["Mentalidad", "Liderazgo", "Marca personal", "Negocios"],
     aside: "Mujeres que lideran su camino",
-    panel: {
-      monogram: "ZS",
-      phrase: ["Presencia,", "claridad y", "dirección."],
-      roles: ["Coach", "Conferencista", "Mentora"],
-    },
   },
   about: {
     heading: "Acompaño a mujeres que están listas para reencontrarse y crecer.",
