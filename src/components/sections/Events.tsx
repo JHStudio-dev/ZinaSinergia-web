@@ -14,8 +14,8 @@ export function Events() {
 
       <div className="zs-events__backdrop" aria-hidden="true">
         <Image
-          src="/images/zina-conferencia.png"
-          alt="Zina en conferencia"s
+          src="/images/zina-conferencia.jpg"
+          alt="Zina en conferencia"
           fill
           sizes="100vw"
           className="zs-events__image"
