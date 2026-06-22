@@ -67,9 +67,10 @@ export const site = {
     ],
   },
   method: {
-    title: "Conecta. Inspira. Transforma.",
+    eyebrow: "El método",
+    title: "Un camino en tres movimientos.",
     intro:
-      "Un camino en tres movimientos. No es una fórmula: es una forma de acompañar lo que ya vive en ti.",
+      "No es una fórmula: es una forma de acompañar lo que ya vive en ti. Conecta, inspira y transforma.",
     steps: [
       {
         title: "Conecta",

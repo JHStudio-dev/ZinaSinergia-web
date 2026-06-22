@@ -7,7 +7,10 @@ export function About() {
   const { about } = site;
 
   return (
-    <section id="sobre-zina" className="scroll-mt-24 bg-carbon py-24 sm:py-32">
+    <section
+      id="sobre-zina"
+      className="zs-surface-raised scroll-mt-24 py-24 sm:py-32"
+    >
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <AnimatedReveal>
@@ -18,9 +21,9 @@ export function About() {
           </AnimatedReveal>
         </div>
 
-        <div className="lg:col-span-7 lg:pt-2">
+        <div className="lg:col-span-7 lg:pt-1">
           <AnimatedReveal delay={120}>
-            <p className="font-display text-2xl italic leading-snug text-ivory/90 sm:text-3xl">
+            <p className="font-display text-2xl italic leading-snug text-ivory/90 sm:text-[1.7rem]">
               {about.lead}
             </p>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-ivory/70 sm:text-lg">
@@ -29,11 +32,14 @@ export function About() {
           </AnimatedReveal>
 
           <AnimatedReveal delay={220}>
-            <figure className="mt-12 overflow-hidden rounded-3xl bg-champagne px-8 py-10 text-carbon sm:px-12 sm:py-14">
-              <span aria-hidden className="font-display text-5xl leading-none text-gold">
+            <figure className="mt-12 overflow-hidden rounded-2xl bg-champagne px-8 py-10 text-carbon sm:px-12 sm:py-14">
+              <span
+                aria-hidden
+                className="font-display text-5xl leading-none text-gold"
+              >
                 “
               </span>
-              <blockquote className="mt-3 font-display text-2xl leading-snug text-carbon sm:text-3xl">
+              <blockquote className="-mt-2 font-display text-2xl leading-snug text-carbon sm:text-[1.7rem]">
                 {about.manifesto}
               </blockquote>
               <figcaption className="mt-7 flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-carbon/60">

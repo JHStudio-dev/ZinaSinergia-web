@@ -4,9 +4,17 @@ import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { mailtoUrl, site, whatsappUrl } from "@/data/site";
 
-function TopicList({ topics }: { topics: readonly string[] }) {
+function TopicList({
+  topics,
+  columns = false,
+}: {
+  topics: readonly string[];
+  columns?: boolean;
+}) {
   return (
-    <ul className="mt-6 space-y-3">
+    <ul
+      className={`mt-6 grid gap-x-8 gap-y-3 ${columns ? "sm:grid-cols-2" : ""}`}
+    >
       {topics.map((topic) => (
         <li key={topic} className="flex items-baseline gap-3 text-ivory/80">
           <span
@@ -26,7 +34,7 @@ export function Services() {
   const secondary = [services.groups[0], services.groups[2]];
 
   return (
-    <section id="servicios" className="scroll-mt-24 bg-night py-24 sm:py-32">
+    <section id="servicios" className="zs-surface scroll-mt-24 py-24 sm:py-32">
       <Container>
         <AnimatedReveal className="max-w-2xl">
           <SectionLabel>Servicios</SectionLabel>
@@ -40,33 +48,35 @@ export function Services() {
 
         <div className="mt-14 space-y-6">
           <AnimatedReveal>
-            <article className="grid gap-10 rounded-3xl border border-gold/25 bg-carbon p-8 sm:p-12 lg:grid-cols-2">
-              <div>
-                <span className="text-xs uppercase tracking-[0.24em] text-gold">
-                  {featured.kind}
-                </span>
-                <h3 className="mt-4 font-display text-3xl text-gold sm:text-4xl">
-                  {featured.title}
-                </h3>
-                <p className="mt-4 max-w-md text-base leading-relaxed text-ivory/70">
-                  {featured.description}
-                </p>
-                <TopicList topics={featured.topics} />
-                <div className="mt-8">
-                  <Button href={whatsappUrl(featured.cta.message)} external>
-                    {featured.cta.label}
-                  </Button>
+            <article className="overflow-hidden rounded-2xl border border-gold/30 bg-night/40 p-8 sm:p-12">
+              <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-14">
+                <div>
+                  <span className="text-xs uppercase tracking-[0.24em] text-gold">
+                    {featured.kind}
+                  </span>
+                  <h3 className="mt-4 font-display text-3xl text-gold sm:text-4xl">
+                    {featured.title}
+                  </h3>
+                  <p className="mt-4 max-w-md text-base leading-relaxed text-ivory/70">
+                    {featured.description}
+                  </p>
+                  <TopicList topics={featured.topics} columns />
+                  <div className="mt-9">
+                    <Button href={whatsappUrl(featured.cta.message)} external>
+                      {featured.cta.label}
+                    </Button>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex">
-                <div className="self-center rounded-2xl bg-champagne px-7 py-8 text-carbon">
-                  <p className="font-display text-xl leading-snug">
-                    {featured.note.question}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-carbon/75">
-                    {featured.note.answer}
-                  </p>
+                <div className="flex">
+                  <div className="self-center border-l border-gold/25 pl-7">
+                    <p className="font-display text-xl italic leading-snug text-ivory">
+                      {featured.note.question}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-ivory/65">
+                      {featured.note.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
             </article>
@@ -82,24 +92,32 @@ export function Services() {
 
               return (
                 <AnimatedReveal key={group.id} delay={i * 90} className="h-full">
-                  <article className="flex h-full flex-col rounded-3xl border border-ivory/10 bg-carbon p-8 transition-colors duration-300 hover:border-gold/40">
+                  <article className="flex h-full flex-col rounded-2xl border border-ivory/10 bg-carbon/40 p-8 transition-colors duration-300 hover:border-gold/40">
                     <span className="text-xs uppercase tracking-[0.24em] text-gold">
                       {group.kind}
                     </span>
-                    <h3 className="mt-4 font-display text-2xl text-gold sm:text-3xl">
+                    <h3 className="mt-4 font-display text-2xl text-ivory sm:text-3xl">
                       {group.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-ivory/65">
                       {group.description}
                     </p>
                     <TopicList topics={group.topics} />
-                    <div className="mt-8 pt-2">
+                    <div className="mt-auto pt-9">
                       <Button
                         href={href}
                         external={isWhatsapp}
-                        variant={isWhatsapp ? "primary" : "secondary"}
+                        variant={isWhatsapp ? "secondary" : "ghost"}
                       >
                         {group.cta.label}
+                        {!isWhatsapp ? (
+                          <span
+                            aria-hidden
+                            className="transition-transform duration-300 group-hover:translate-x-0.5"
+                          >
+                            →
+                          </span>
+                        ) : null}
                       </Button>
                     </div>
                   </article>
