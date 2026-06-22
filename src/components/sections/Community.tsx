@@ -6,7 +6,7 @@ import { isExternalHref, site } from "@/data/site";
 
 export function Community() {
   const { community } = site;
-  const instagramHref = site.contact.instagram || "#contacto";
+  const instagramHref = site.contact.instagram || "https://www.instagram.com/zina.sinergia/";
 
   return (
     <section id="comunidad" className="scroll-mt-24 bg-carbon py-24 sm:py-32">

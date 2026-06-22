@@ -17,7 +17,42 @@ export function Hero() {
     >
       <div aria-hidden className="zs-hero__texture" />
       <div aria-hidden className="zs-hero__glow" />
-      <div aria-hidden className="zs-hero__waves" />
+      <div aria-hidden className="zs-hero__waves">
+        <svg viewBox="0 0 520 760" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="zsFold" x1="0" y1="0" x2="0.3" y2="1">
+              <stop offset="0" stopColor="#c2a15c" stopOpacity="0" />
+              <stop offset="0.4" stopColor="#e6cd8b" stopOpacity="0.9" />
+              <stop offset="0.64" stopColor="#c2a15c" stopOpacity="0.45" />
+              <stop offset="1" stopColor="#c2a15c" stopOpacity="0" />
+            </linearGradient>
+            <path
+              id="zsFoldA"
+              d="M 300 -60 C 170 170 330 330 215 510 C 135 645 280 745 195 900"
+            />
+            <path
+              id="zsFoldB"
+              d="M 360 -60 C 235 160 405 300 250 470 C 150 615 320 760 235 915"
+            />
+          </defs>
+          <g
+            fill="none"
+            stroke="url(#zsFold)"
+            strokeWidth="1.1"
+            vectorEffect="non-scaling-stroke"
+          >
+            <use href="#zsFoldA" transform="translate(-40 0)" />
+            <use href="#zsFoldB" transform="translate(-12 0)" />
+            <use href="#zsFoldA" transform="translate(24 0)" />
+            <use href="#zsFoldB" transform="translate(60 0)" />
+            <use href="#zsFoldA" transform="translate(98 0)" />
+            <use href="#zsFoldB" transform="translate(140 0)" />
+            <use href="#zsFoldA" transform="translate(186 0)" />
+            <use href="#zsFoldB" transform="translate(234 0)" />
+            <use href="#zsFoldA" transform="translate(284 0)" />
+          </g>
+        </svg>
+      </div>
 
       <Container className="relative z-10 grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-6">
@@ -102,7 +137,7 @@ export function Hero() {
         aria-hidden
         className="absolute bottom-6 right-6 text-lg text-gold/55"
       >
-        ✦
+        
       </span>
     </section>
   );

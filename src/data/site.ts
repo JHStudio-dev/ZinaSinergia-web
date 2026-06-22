@@ -236,7 +236,7 @@ export const site = {
   contact: {
     whatsapp: "",
     instagram: "",
-    email: "hola@zinasinergia.com",
+    email: "contacto@zinasinergia.com",
   },
 } as const;
 
