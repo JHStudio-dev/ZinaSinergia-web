@@ -1,7 +1,6 @@
+import Image from "next/image";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 import { site } from "@/data/site";
 
 export function Events() {
@@ -10,64 +9,96 @@ export function Events() {
   return (
     <section
       id="eventos"
-      className="scroll-mt-24 overflow-hidden bg-carbon py-24 sm:py-32"
+      className="zs-events scroll-mt-24 overflow-hidden"
     >
-      <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-        <AnimatedReveal className="lg:col-span-5">
-          <SectionLabel>Conferencias</SectionLabel>
-          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.08] tracking-tight text-gold sm:text-5xl">
-            {events.heading}
-          </h2>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-ivory/70 sm:text-lg">
-            {events.intro}
-          </p>
 
-          <dl className="mt-9 flex flex-wrap gap-x-12 gap-y-5">
-            <div>
-              <dt className="text-xs uppercase tracking-[0.22em] text-ivory/50">
-                Formatos
-              </dt>
-              <dd className="mt-1 font-display text-lg text-ivory">
-                {events.formats.join(" · ")}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs uppercase tracking-[0.22em] text-ivory/50">
-                Modalidad
-              </dt>
-              <dd className="mt-1 font-display text-lg text-ivory">
-                {events.reach}
-              </dd>
-            </div>
-          </dl>
+      <div className="zs-events__backdrop" aria-hidden="true">
+        <Image
+          src="/images/zina-conferencia.png"
+          alt="Zina en conferencia"s
+          fill
+          sizes="100vw"
+          className="zs-events__image"
+          priority={false}
+        />
+        <div className="zs-events__overlay" />
+      </div>
 
-          <div className="mt-9">
-            <Button href={events.cta.href}>{events.cta.label}</Button>
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
+        <div className="grid items-end gap-12 lg:grid-cols-12 lg:gap-0">
+
+
+          <div className="lg:col-span-6 xl:col-span-5">
+            <AnimatedReveal>
+              <span className="zs-events__eyebrow">
+                <span className="zs-events__eyebrow-line" aria-hidden="true" />
+                Speaker · Coach · Conferencista
+              </span>
+
+              <h2 className="zs-events__heading">
+                {events.heading}
+              </h2>
+
+              <p className="zs-events__intro">
+                {events.intro}
+              </p>
+            </AnimatedReveal>
+
+
+            <AnimatedReveal delay={120}>
+              <div className="zs-events__topics">
+                <p className="zs-events__topics-label">Temas que aborda</p>
+                <ul className="zs-events__topics-list">
+                  {events.topics.map((topic) => (
+                    <li key={topic} className="zs-events__topic">
+                      <span className="zs-events__topic-dot" aria-hidden="true" />
+                      {topic}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimatedReveal>
+
+
+            <AnimatedReveal delay={200}>
+              <div className="zs-events__meta">
+                <div className="zs-events__meta-block">
+                  <span className="zs-events__meta-label">Formatos</span>
+                  <span className="zs-events__meta-value">
+                    {events.formats.join(" · ")}
+                  </span>
+                </div>
+                <div className="zs-events__meta-divider" aria-hidden="true" />
+                <div className="zs-events__meta-block">
+                  <span className="zs-events__meta-label">Modalidad</span>
+                  <span className="zs-events__meta-value">{events.reach}</span>
+                </div>
+              </div>
+            </AnimatedReveal>
+
+
+            <AnimatedReveal delay={280}>
+              <div className="mt-10 sm:mt-12">
+                <Button href={events.cta.href}>{events.cta.label}</Button>
+              </div>
+            </AnimatedReveal>
           </div>
-        </AnimatedReveal>
 
-        <AnimatedReveal delay={140} className="lg:col-span-7">
-          <div className="rounded-3xl border border-ivory/10 bg-carbon p-8 sm:p-10">
-            <p className="text-xs uppercase tracking-[0.24em] text-ivory/50">
-              Temas que aborda
-            </p>
-            <ul className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-2">
-              {events.topics.map((topic) => (
-                <li
-                  key={topic}
-                  className="flex items-center gap-3 border-t border-ivory/10 pt-4 text-ivory/85"
-                >
-                  <span
-                    className="h-1 w-1 shrink-0 rounded-full bg-gold"
-                    aria-hidden
-                  />
-                  <span className="text-base leading-snug">{topic}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </AnimatedReveal>
-      </Container>
+
+          <div className="hidden lg:col-span-6 lg:block xl:col-span-7" />
+        </div>
+      </div>
+
+
+      <AnimatedReveal delay={340}>
+        <div className="zs-events__caption" aria-hidden="true">
+          <span className="zs-events__caption-line" />
+          <span className="zs-events__caption-text">
+            {events.speaker.caption}
+          </span>
+        </div>
+      </AnimatedReveal>
     </section>
   );
 }
