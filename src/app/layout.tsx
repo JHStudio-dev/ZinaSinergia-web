@@ -53,7 +53,10 @@ export default function RootLayout({
       lang="es"
       className={`${cormorant.variable} ${instrument.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-night text-ivory">{children}</body>
+      <body className="min-h-full bg-night text-ivory">
+        <div aria-hidden className="zs-grain zs-grain--fixed" />
+        {children}
+      </body>
     </html>
   );
 }

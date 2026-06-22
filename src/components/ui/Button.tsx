@@ -3,19 +3,21 @@ import type { ReactNode } from "react";
 type ButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "ghost";
   external?: boolean;
   className?: string;
 };
 
 const base =
-  "group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-wide transition-all duration-300 will-change-transform";
+  "group inline-flex items-center justify-center gap-2 text-sm font-medium tracking-wide transition-all duration-300 will-change-transform";
 
 const variants = {
   primary:
-    "bg-gold text-night hover:-translate-y-0.5 hover:bg-gold/90 hover:shadow-[0_16px_40px_-16px_rgba(191,157,87,0.55)]",
+    "rounded-full bg-gold px-7 py-3 text-night hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--color-gold)_90%,white)] hover:shadow-[0_12px_30px_-20px_rgba(194,161,92,0.7)]",
   secondary:
-    "border border-ivory/25 text-ivory hover:-translate-y-0.5 hover:border-gold/70 hover:text-gold",
+    "rounded-full border border-ivory/20 px-7 py-3 text-ivory hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold",
+  ghost:
+    "border-b border-gold/30 pb-1 text-ivory hover:border-gold hover:text-gold",
 };
 
 export function Button({

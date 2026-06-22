@@ -11,14 +11,17 @@ export function SectionLabel({
   tone = "onDark",
   className = "",
 }: SectionLabelProps) {
-  const textColor = tone === "onLight" ? "text-carbon/60" : "text-gold";
+  const labelColor = tone === "onLight" ? "text-carbon/55" : "text-ivory/55";
 
   return (
     <span
-      className={`inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.28em] ${textColor} ${className}`}
+      className={`inline-flex items-baseline gap-2.5 text-[0.7rem] font-medium uppercase tracking-[0.32em] ${labelColor} ${className}`}
     >
-      {index ? <span className="text-gold">{index}</span> : null}
-      <span className="h-px w-8 bg-gold/50" aria-hidden="true" />
+      {index ? (
+        <span className="font-display text-base italic normal-case tracking-normal text-gold">
+          {index}
+        </span>
+      ) : null}
       {children}
     </span>
   );
