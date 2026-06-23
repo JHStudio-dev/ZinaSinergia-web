@@ -322,39 +322,6 @@
     background: color-mix(in srgb, var(--color-gold) 25%, transparent);
   }
 
-
-  .zs-events__caption {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 3rem;
-    padding-inline: 1.5rem;
-    justify-content: flex-end;
-  }
-
-  @media (min-width: 1024px) {
-    .zs-events__caption {
-      margin-top: 0;
-      padding-right: 3rem;
-    }
-  }
-
-  .zs-events__caption-line {
-    width: 2.5rem;
-    height: 1px;
-    background: color-mix(in srgb, var(--color-gold) 35%, transparent);
-  }
-
-  .zs-events__caption-text {
-    font-family: var(--font-display), ui-serif, Georgia, serif;
-    font-size: 0.85rem;
-    font-style: italic;
-    letter-spacing: 0.06em;
-    color: color-mix(in srgb, var(--color-ivory) 40%, transparent);
-  }
-
   .zs-grain {
     position: absolute;
     inset: 0;
