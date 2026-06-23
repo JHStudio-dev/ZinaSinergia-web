@@ -3,7 +3,6 @@
 import type { FormEvent } from "react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Container } from "@/components/ui/Container";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 import { site } from "@/data/site";
 
 const inputClass =
@@ -82,16 +81,15 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="relative scroll-mt-24 overflow-hidden bg-night py-24 sm:py-32"
+      className="zs-surface scroll-mt-24 py-24 sm:py-32"
     >
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[-10%] top-[-20%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,rgba(194,161,92,0.12),transparent_62%)] blur-2xl" />
-      </div>
-
-      <Container className="relative grid gap-14 lg:grid-cols-2 lg:gap-20">
+      <Container className="grid gap-14 lg:grid-cols-2 lg:gap-20">
         <AnimatedReveal>
-          <SectionLabel>{contactSection.eyebrow}</SectionLabel>
-          <h2 className="mt-7 font-display text-4xl font-medium leading-[1.06] tracking-tight text-gold sm:text-5xl">
+          <p className="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-ivory/55">
+            <span className="zs-tick h-4" />
+            {contactSection.eyebrow}
+          </p>
+          <h2 className="mt-6 font-display text-4xl font-medium leading-[1.06] tracking-tight text-gold sm:text-5xl">
             {contactSection.heading}
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-ivory/70 sm:text-lg">
@@ -127,9 +125,14 @@ export function Contact() {
         <AnimatedReveal delay={140}>
           <form
             onSubmit={handleSubmit}
-            className="space-y-8 rounded-3xl border border-ivory/10 bg-carbon p-8 sm:p-10"
+            className="space-y-8 rounded-2xl border border-ivory/10 bg-carbon/40 p-8 sm:p-10"
           >
-            <Field id="nombre" label="Nombre completo" autoComplete="name" required />
+            <Field
+              id="nombre"
+              label="Nombre completo"
+              autoComplete="name"
+              required
+            />
             <Field
               id="empresa"
               label="Empresa o cargo"
@@ -146,7 +149,7 @@ export function Contact() {
 
             <button
               type="submit"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-medium tracking-wide text-night transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-medium tracking-wide text-night transition-all duration-300 hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--color-gold)_90%,white)]"
             >
               {contactSection.submitLabel}
               <span className="transition-transform duration-300 group-hover:translate-x-0.5">
