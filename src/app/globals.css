@@ -450,8 +450,12 @@
 
   .zs-navbar__shell[data-hidden="true"] {
     opacity: 0;
-    transform: translateY(-14px);
+    transform: translateY(-8px) scale(0.985);
     pointer-events: none;
+  }
+
+  .zs-navbar__shell[data-hidden="true"] .zs-navbar__orbital {
+    opacity: 0;
   }
 
   .zs-navbar__bar {
@@ -468,7 +472,7 @@
     backdrop-filter: blur(18px) saturate(120%);
     -webkit-backdrop-filter: blur(18px) saturate(120%);
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-14px);
     transition:
       opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -497,6 +501,7 @@
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+    transition-delay: 0.08s;
   }
 
   .zs-navbar__bar-brand {
@@ -515,6 +520,7 @@
     align-items: center;
     gap: 0.6rem;
     width: 14rem;
+    transition: opacity 0.35s ease;
   }
 
   .zs-navbar__orbital::before,
