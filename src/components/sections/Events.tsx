@@ -26,7 +26,7 @@ export function Events() {
           <AnimatedReveal>
             <span className="zs-events__eyebrow">
               <span className="zs-events__eyebrow-line" aria-hidden="true" />
-              Speaker · Coach · Conferencista
+              Conferencista
             </span>
 
             <h2 className="zs-events__heading">{events.heading}</h2>
@@ -40,7 +40,6 @@ export function Events() {
               <ul className="zs-events__topics-list">
                 {events.topics.map((topic) => (
                   <li key={topic} className="zs-events__topic">
-                    <span className="zs-events__topic-dot" aria-hidden="true" />
                     {topic}
                   </li>
                 ))}
@@ -53,7 +52,7 @@ export function Events() {
               <div className="zs-events__meta-block">
                 <span className="zs-events__meta-label">Formatos</span>
                 <span className="zs-events__meta-value">
-                  {events.formats.join(" · ")}
+                  {events.formats.join(", ")}
                 </span>
               </div>
               <div className="zs-events__meta-divider" aria-hidden="true" />
