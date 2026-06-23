@@ -123,57 +123,69 @@
 
   .zs-events {
     position: relative;
-    min-height: 100svh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-block: 8rem 5rem;
+    justify-content: flex-end;
+    min-height: 100svh;
+    padding-block: 9rem 4rem;
     background-color: var(--color-night);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 1024px) {
     .zs-events {
-      padding-block: 10rem 7rem;
+      justify-content: center;
+      min-height: 90svh;
+      padding-block: 9rem;
     }
   }
-
 
   .zs-events__backdrop {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 0;
     overflow: hidden;
   }
 
   .zs-events__image {
-    object-position: right center !important;
-    opacity: 0.95;
-    transition: opacity 1.2s ease;
+    object-fit: cover;
+    object-position: center 20%;
   }
 
+  @media (min-width: 1024px) {
+    .zs-events__image {
+      object-position: 75% center;
+    }
+  }
 
   .zs-events__overlay {
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(90deg, #050506 0%, rgba(5,5,6,.92) 32%, rgba(5,5,6,.55) 58%, rgba(5,5,6,.2) 100%),
-      linear-gradient(180deg, transparent 45%, #050506 100%);
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-night) 28%, transparent) 0%,
+      color-mix(in srgb, var(--color-night) 70%, transparent) 44%,
+      var(--color-night) 84%
+    );
   }
 
-
-  @media (max-width: 1023px) {
-    .zs-events__image {
-      object-position: center 20% !important;
-    }
-
+  @media (min-width: 1024px) {
     .zs-events__overlay {
       background:
-        linear-gradient(180deg, rgba(5,5,6,0.1) 0%, rgba(5,5,6,0.8) 40%, #050506 70%);
-    }
-
-    .zs-events {
-      min-height: auto;
-      padding-top: 10rem;
+        linear-gradient(
+          90deg,
+          var(--color-night) 0%,
+          var(--color-night) 30%,
+          color-mix(in srgb, var(--color-night) 55%, transparent) 52%,
+          color-mix(in srgb, var(--color-night) 8%, transparent) 78%,
+          transparent 100%
+        ),
+        linear-gradient(
+          180deg,
+          transparent 58%,
+          color-mix(in srgb, var(--color-night) 55%, transparent) 100%
+        );
     }
   }
 
