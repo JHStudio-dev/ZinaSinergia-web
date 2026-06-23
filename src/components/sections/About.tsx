@@ -1,6 +1,5 @@
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Container } from "@/components/ui/Container";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 import { site } from "@/data/site";
 
 export function About() {
@@ -9,46 +8,39 @@ export function About() {
   return (
     <section
       id="sobre-zina"
-      className="zs-surface-raised scroll-mt-24 py-24 sm:py-32"
+      className="zs-surface-raised scroll-mt-24 py-24 sm:py-32 lg:py-40"
     >
-      <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-5">
-          <AnimatedReveal>
-            <SectionLabel>Sobre Zina</SectionLabel>
-            <h2 className="mt-7 font-display text-4xl font-medium leading-[1.1] tracking-tight text-gold sm:text-5xl">
-              {about.heading}
-            </h2>
-          </AnimatedReveal>
-        </div>
+      <Container>
+        <AnimatedReveal>
+          <h2 className="max-w-4xl font-display text-4xl font-medium leading-[1.08] tracking-tight text-gold sm:text-5xl lg:text-6xl">
+            {about.heading}
+          </h2>
+        </AnimatedReveal>
 
-        <div className="lg:col-span-7 lg:pt-1">
-          <AnimatedReveal delay={120}>
-            <p className="font-display text-2xl italic leading-snug text-ivory/90 sm:text-[1.7rem]">
-              {about.lead}
-            </p>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ivory/70 sm:text-lg">
-              {about.body}
-            </p>
-          </AnimatedReveal>
+        <AnimatedReveal delay={120}>
+          <p className="mt-12 max-w-2xl font-display text-2xl italic leading-[1.3] text-ivory/90 sm:text-[1.9rem] lg:ml-[16%]">
+            {about.lead}
+          </p>
+        </AnimatedReveal>
 
-          <AnimatedReveal delay={220}>
-            <figure className="mt-12 overflow-hidden rounded-2xl bg-champagne px-8 py-10 text-carbon sm:px-12 sm:py-14">
-              <span
-                aria-hidden
-                className="font-display text-5xl leading-none text-gold"
-              >
-                “
-              </span>
-              <blockquote className="-mt-2 font-display text-2xl leading-snug text-carbon sm:text-[1.7rem]">
-                {about.manifesto}
-              </blockquote>
-              <figcaption className="mt-7 flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-carbon/60">
-                <span className="h-px w-8 bg-gold" aria-hidden />
-                {about.signature}
-              </figcaption>
-            </figure>
-          </AnimatedReveal>
-        </div>
+        {/* Slot reservado: aquí puede entrar un retrato de Zina junto al texto. */}
+        <AnimatedReveal delay={180}>
+          <p className="mt-12 max-w-[58ch] text-base leading-relaxed text-ivory/70 sm:text-lg">
+            {about.body}
+          </p>
+        </AnimatedReveal>
+
+        <AnimatedReveal delay={240}>
+          <figure className="mt-16 max-w-3xl rounded-2xl bg-champagne px-8 py-10 text-carbon sm:px-12 sm:py-14 lg:ml-auto">
+            <p className="font-display text-2xl leading-snug text-carbon sm:text-3xl">
+              {about.manifesto}
+            </p>
+            <figcaption className="mt-7 flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-carbon/60">
+              <span className="h-px w-8 bg-gold" aria-hidden />
+              {about.signature}
+            </figcaption>
+          </figure>
+        </AnimatedReveal>
       </Container>
     </section>
   );
