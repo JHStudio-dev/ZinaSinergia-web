@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -13,7 +12,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-[100svh] scroll-mt-24 items-center overflow-hidden bg-night pt-28 pb-20"
+      className="relative flex min-h-[100svh] scroll-mt-24 items-center overflow-hidden bg-night pt-24 pb-16"
     >
       <div aria-hidden className="zs-hero__texture" />
       <div aria-hidden className="zs-hero__glow" />
@@ -68,65 +67,42 @@ export function Hero() {
       </div>
 
       <Container className="relative z-10 w-full">
-        <div className="max-w-3xl">
-          <AnimatedReveal>
-            <p className="mb-7 flex items-center gap-3 text-[0.72rem] uppercase tracking-[0.34em] text-ivory/55">
-              <span className="zs-tick h-4" />
-              {hero.lead}
-            </p>
-          </AnimatedReveal>
+        <div className="grid items-center gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <AnimatedReveal>
+              <h1 className="font-display text-[3rem] font-medium leading-[1.02] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
+                <span className="block">{hero.title.line1}</span>
+                <span className="block">
+                  {hero.title.line2}{" "}
+                  <span className="text-gold">{hero.title.accent}</span>
+                </span>
+              </h1>
+            </AnimatedReveal>
 
-          <AnimatedReveal delay={80}>
-            <h1 className="font-display text-[2.9rem] font-medium leading-[1.04] tracking-tight text-ivory sm:text-6xl lg:text-[4.6rem]">
-              <span className="block">{hero.title.line1}</span>
-              <span className="block">
-                {hero.title.line2}{" "}
-                <span className="text-gold">{hero.title.accent}</span>
-              </span>
-            </h1>
-          </AnimatedReveal>
-
-          <AnimatedReveal delay={160}>
-            <div className="mt-8 flex items-start gap-5">
-              <span
-                aria-hidden
-                className="mt-3.5 hidden h-px w-12 shrink-0 bg-gradient-to-r from-gold to-transparent sm:block"
-              />
-              <p className="max-w-xl text-base leading-relaxed text-ivory/70 sm:text-[1.05rem]">
+            <AnimatedReveal delay={120}>
+              <p className="mt-7 max-w-xl text-base leading-relaxed text-ivory/70 sm:text-lg">
                 {hero.subtitle}
               </p>
-            </div>
-          </AnimatedReveal>
+            </AnimatedReveal>
 
-          <AnimatedReveal delay={240}>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button href={primaryHref} external>
-                {hero.primaryCta.label}
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </Button>
-              <Button href={hero.secondaryCta.href} variant="secondary">
-                {hero.secondaryCta.label}
-              </Button>
-            </div>
-          </AnimatedReveal>
+            <AnimatedReveal delay={220}>
+              <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center">
+                <Button href={primaryHref} external>
+                  {hero.primaryCta.label}
+                  <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                    →
+                  </span>
+                </Button>
+                <Button href={hero.secondaryCta.href} variant="ghost">
+                  {hero.secondaryCta.label}
+                </Button>
+              </div>
+            </AnimatedReveal>
+          </div>
 
-          <AnimatedReveal delay={320}>
-            <div className="mt-14 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-ivory/10 pt-6 text-[0.78rem] tracking-wide text-ivory/60">
-              {hero.signature.map((item, i) => (
-                <Fragment key={item}>
-                  {i > 0 ? (
-                    <span
-                      aria-hidden
-                      className="h-1 w-1 rounded-full bg-gold/55"
-                    />
-                  ) : null}
-                  <span>{item}</span>
-                </Fragment>
-              ))}
-            </div>
-          </AnimatedReveal>
+          {/* Columna derecha: zona negativa cinematográfica. Slot reservado
+              para un retrato de Zina cuando esté disponible. */}
+          <div className="hidden lg:col-span-5 lg:block" aria-hidden />
         </div>
       </Container>
 

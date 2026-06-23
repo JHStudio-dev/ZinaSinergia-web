@@ -18,7 +18,6 @@ export const site = {
     href: "#contacto",
   },
   hero: {
-    lead: "Coach · Conferencista · Mentora",
     title: {
       line1: "Tu siguiente etapa",
       line2: "necesita",
@@ -28,7 +27,6 @@ export const site = {
       "Mentorías, conferencias y experiencias para mujeres que quieren fortalecer su liderazgo, su visión y sus proyectos con claridad.",
     primaryCta: { label: "Agenda una conversación" },
     secondaryCta: { label: "Ver los servicios", href: "#servicios" },
-    signature: ["Mentalidad", "Liderazgo", "Marca personal", "Negocios"],
     aside: "Mujeres que lideran su camino",
   },
   about: {
@@ -153,7 +151,7 @@ export const site = {
         cta: {
           type: "email",
           label: "Escribir como empresa",
-          subject: "Consulta empresarial — Zina Sinergia",
+          subject: "Consulta empresarial - Zina Sinergia",
         },
       },
     ],

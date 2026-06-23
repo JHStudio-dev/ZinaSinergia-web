@@ -20,7 +20,7 @@ const siteDescription =
   "Marca personal de Zina Sinergia: coaching, conferencias y acompañamiento humano para reconectar con tu propósito y avanzar con intención.";
 
 export const metadata: Metadata = {
-  title: "Zina Sinergia — Conecta. Inspira. Transforma.",
+  title: "Zina Sinergia - Conecta. Inspira. Transforma.",
   description: siteDescription,
   keywords: [
     "Zina Sinergia",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     siteName: "Zina Sinergia",
-    title: "Zina Sinergia — Conecta. Inspira. Transforma.",
+    title: "Zina Sinergia - Conecta. Inspira. Transforma.",
     description: siteDescription,
   },
 };

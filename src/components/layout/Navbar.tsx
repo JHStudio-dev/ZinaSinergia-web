@@ -5,11 +5,10 @@ import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { site } from "@/data/site";
 
-const tagline = site.brand.tagline
+const taglineWords = site.brand.tagline
   .split(".")
   .map((part) => part.trim())
-  .filter(Boolean)
-  .join(" · ");
+  .filter(Boolean);
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -156,9 +155,11 @@ export function Navbar() {
         </Container>
 
         <Container className="pb-10">
-          <p className="text-[0.7rem] uppercase tracking-[0.34em] text-gold/70">
-            {tagline}
-          </p>
+          <div className="flex flex-col gap-1.5 text-[0.7rem] uppercase tracking-[0.34em] text-gold/70">
+            {taglineWords.map((word) => (
+              <span key={word}>{word}</span>
+            ))}
+          </div>
         </Container>
       </div>
     </header>
