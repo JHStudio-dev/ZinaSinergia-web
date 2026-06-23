@@ -29,7 +29,7 @@ export function Navbar() {
 
   return (
     <header className="zs-navbar">
-      <div className="zs-navbar__shell" data-scrolled={scrolled}>
+      <div className="zs-navbar__shell" data-hidden={scrolled}>
         <a
           href="#inicio"
           className="zs-navbar__brand"
@@ -55,6 +55,30 @@ export function Navbar() {
             </span>
           </a>
         </nav>
+      </div>
+
+      <div className="zs-navbar__bar" data-visible={scrolled}>
+        <a
+          href="#inicio"
+          className="zs-navbar__bar-brand"
+          aria-label="Zina Sinergia, ir al inicio"
+        >
+          <span className="zs-tick h-5" />
+          <Wordmark tone="dark" />
+        </a>
+        <nav className="zs-navbar__links" aria-label="Navegación principal">
+          {site.nav.map((item) => (
+            <a key={item.href} href={item.href} className="zs-navbar__link">
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <a href={site.cta.href} className="zs-navbar__cta zs-navbar__bar-cta">
+          {site.cta.label}
+          <span aria-hidden="true" className="text-gold">
+            →
+          </span>
+        </a>
       </div>
 
       <div className="zs-navbar__mobile">
