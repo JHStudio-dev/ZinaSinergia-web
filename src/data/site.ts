@@ -36,6 +36,7 @@ export const site = {
     manifesto:
       "Creo en los procesos que se sienten. En volver a lo esencial para construir, desde ahí, una nueva versión de ti.",
     signature: "Zina",
+    photo: "/images/zina-retrato.jpg",
   },
   impactAreas: {
     heading: "En qué te acompaño.",

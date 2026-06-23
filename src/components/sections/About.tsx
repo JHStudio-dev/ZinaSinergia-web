@@ -1,5 +1,6 @@
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Container } from "@/components/ui/Container";
+import { PortraitImage } from "@/components/ui/PortraitImage";
 import { site } from "@/data/site";
 
 export function About() {
@@ -36,6 +37,7 @@ export function About() {
             <AnimatedReveal delay={160}>
               <div className="zs-portrait mx-auto aspect-[4/5] w-full max-w-sm lg:mx-0 lg:ml-auto">
                 <span className="zs-grain absolute inset-0" aria-hidden />
+                <PortraitImage src={about.photo} alt="Zina Sinergia" />
               </div>
             </AnimatedReveal>
           </div>
