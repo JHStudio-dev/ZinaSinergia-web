@@ -390,6 +390,30 @@
     );
   }
 
+  .zs-portrait {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-gold) 25%, transparent);
+    background:
+      radial-gradient(
+        120% 80% at 50% 0%,
+        color-mix(in srgb, var(--color-ivory) 6%, transparent),
+        transparent 60%
+      ),
+      linear-gradient(180deg, var(--color-carbon), var(--color-night));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-ivory) 8%, transparent);
+  }
+
+  .zs-portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--color-gold) 14%, transparent);
+    border-radius: 0.6rem;
+    pointer-events: none;
+  }
+
   .zs-navbar {
     position: fixed;
     inset: 0 0 auto 0;

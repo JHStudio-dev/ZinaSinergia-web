@@ -100,8 +100,6 @@ export function Hero() {
             </AnimatedReveal>
           </div>
 
-          {/* Columna derecha: zona negativa cinematográfica. Slot reservado
-              para un retrato de Zina cuando esté disponible. */}
           <div className="hidden lg:col-span-5 lg:block" aria-hidden />
         </div>
       </Container>

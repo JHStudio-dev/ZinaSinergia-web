@@ -11,27 +11,38 @@ export function About() {
       className="zs-surface-raised scroll-mt-24 py-24 sm:py-32 lg:py-40"
     >
       <Container>
-        <AnimatedReveal>
-          <h2 className="max-w-4xl font-display text-4xl font-medium leading-[1.08] tracking-tight text-gold sm:text-5xl lg:text-6xl">
-            {about.heading}
-          </h2>
-        </AnimatedReveal>
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+          <div className="lg:col-span-7">
+            <AnimatedReveal>
+              <h2 className="font-display text-4xl font-medium leading-[1.08] tracking-tight text-gold sm:text-5xl">
+                {about.heading}
+              </h2>
+            </AnimatedReveal>
+
+            <AnimatedReveal delay={120}>
+              <p className="mt-8 max-w-xl font-display text-2xl italic leading-[1.3] text-ivory/90 sm:text-[1.7rem]">
+                {about.lead}
+              </p>
+            </AnimatedReveal>
+
+            <AnimatedReveal delay={180}>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/70 sm:text-lg">
+                {about.body}
+              </p>
+            </AnimatedReveal>
+          </div>
+
+          <div className="lg:col-span-5">
+            <AnimatedReveal delay={160}>
+              <div className="zs-portrait mx-auto aspect-[4/5] w-full max-w-sm lg:mx-0 lg:ml-auto">
+                <span className="zs-grain absolute inset-0" aria-hidden />
+              </div>
+            </AnimatedReveal>
+          </div>
+        </div>
 
         <AnimatedReveal delay={120}>
-          <p className="mt-12 max-w-2xl font-display text-2xl italic leading-[1.3] text-ivory/90 sm:text-[1.9rem] lg:ml-[16%]">
-            {about.lead}
-          </p>
-        </AnimatedReveal>
-
-        {/* Slot reservado: aquí puede entrar un retrato de Zina junto al texto. */}
-        <AnimatedReveal delay={180}>
-          <p className="mt-12 max-w-[58ch] text-base leading-relaxed text-ivory/70 sm:text-lg">
-            {about.body}
-          </p>
-        </AnimatedReveal>
-
-        <AnimatedReveal delay={240}>
-          <figure className="mt-16 max-w-3xl rounded-2xl bg-champagne px-8 py-10 text-carbon sm:px-12 sm:py-14 lg:ml-auto">
+          <figure className="mt-16 max-w-3xl rounded-2xl bg-champagne px-8 py-10 text-carbon sm:px-12 sm:py-14">
             <p className="font-display text-2xl leading-snug text-carbon sm:text-3xl">
               {about.manifesto}
             </p>
