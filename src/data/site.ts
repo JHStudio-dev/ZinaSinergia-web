@@ -65,7 +65,6 @@ export const site = {
     ],
   },
   method: {
-    eyebrow: "El método",
     title: "Un camino en tres movimientos.",
     intro:
       "No es una fórmula: es una forma de acompañar lo que ya vive en ti. Conecta, inspira y transforma.",
@@ -171,7 +170,6 @@ export const site = {
     formats: ["Conferencias", "Talleres", "Paneles"],
     reach: "Presencial y en línea",
     cta: { label: "Invitar a Zina a un evento", href: "#contacto" },
-    speaker: { caption: "Zina en escena", note: "Conferencista" },
   },
   testimonials: {
     heading: "Lo que queda después del encuentro.",
