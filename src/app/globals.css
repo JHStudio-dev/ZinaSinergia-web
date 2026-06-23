@@ -623,7 +623,7 @@
     justify-content: space-between;
     gap: 1rem;
     width: min(92vw, 34rem);
-    margin: 1rem auto 0;
+    margin: calc(env(safe-area-inset-top, 0px) + 1.35rem) auto 0;
     padding: 0.7rem 0.85rem 0.7rem 1.2rem;
     border-radius: 999px;
     border: 1px solid color-mix(in srgb, var(--color-gold) 20%, transparent);

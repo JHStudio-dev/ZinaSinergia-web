@@ -108,7 +108,7 @@ export function Navbar() {
       <div
         className={`fixed inset-0 z-50 flex flex-col bg-night transition-[opacity,visibility] duration-300 lg:hidden ${
           open
-            ? "visible opacity-100"
+            ? "visible opacity-100 pointer-events-auto"
             : "pointer-events-none invisible opacity-0"
         }`}
       >
