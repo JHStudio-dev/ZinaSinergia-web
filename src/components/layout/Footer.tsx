@@ -2,12 +2,6 @@ import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { isExternalHref, mailtoUrl, site, whatsappUrl } from "@/data/site";
 
-const tagline = site.footer.tagline
-  .split(".")
-  .map((part) => part.trim())
-  .filter(Boolean)
-  .join(" · ");
-
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -29,7 +23,7 @@ export function Footer() {
           <div>
             <Wordmark tone="dark" />
             <p className="mt-5 font-display text-xl italic leading-snug text-ivory/85">
-              {tagline}
+              {site.footer.tagline}
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory/55">
               Acompañamiento humano para mujeres que quieren crecer con

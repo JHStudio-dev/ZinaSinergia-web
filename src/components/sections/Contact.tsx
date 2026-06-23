@@ -81,7 +81,7 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="zs-surface scroll-mt-24 py-24 sm:py-32"
+      className="zs-surface scroll-mt-24 py-24 sm:py-32 lg:py-40"
     >
       <Container className="grid gap-14 lg:grid-cols-2 lg:gap-20">
         <AnimatedReveal>
