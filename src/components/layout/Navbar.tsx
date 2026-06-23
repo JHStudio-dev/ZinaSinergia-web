@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { site } from "@/data/site";
 
@@ -29,88 +28,78 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "border-b border-ivory/10 bg-night/80 backdrop-blur-xl"
-          : "border-b border-transparent"
-      }`}
-    >
-      <span
-        aria-hidden
-        className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent transition-opacity duration-500 ${
-          scrolled ? "opacity-25" : "opacity-100"
-        }`}
-      />
-
-      <Container
-        className={`relative flex items-center justify-between transition-all duration-500 ${
-          scrolled ? "h-16" : "h-20 sm:h-24"
-        }`}
-      >
+    <header className="zs-navbar">
+      <div className="zs-navbar__shell" data-scrolled={scrolled}>
         <a
           href="#inicio"
-          className="group flex items-center gap-3"
+          className="zs-navbar__brand"
           aria-label="Zina Sinergia, ir al inicio"
         >
-          <span className="zs-tick h-6 transition-transform duration-300 group-hover:scale-y-125" />
           <Wordmark tone="dark" />
         </a>
 
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 lg:flex">
+        <span className="zs-navbar__orbital" aria-hidden="true">
+          <span className="zs-navbar__orbital-node" />
+        </span>
+
+        <nav className="zs-navbar__links">
           {site.nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="zs-link text-sm tracking-wide"
-            >
+            <a key={item.href} href={item.href} className="zs-navbar__link">
               {item.label}
             </a>
           ))}
+          <a href={site.cta.href} className="zs-navbar__cta">
+            {site.cta.label}
+            <span aria-hidden="true" className="text-gold">
+              →
+            </span>
+          </a>
         </nav>
+      </div>
 
+      <div className="zs-navbar__mobile">
         <a
-          href={site.cta.href}
-          className="group/cta hidden items-center gap-2 rounded-full border border-gold/40 px-5 py-2 text-sm text-ivory transition-all duration-300 hover:border-gold hover:bg-gold/10 lg:inline-flex"
+          href="#inicio"
+          className="flex items-center gap-2.5"
+          aria-label="Zina Sinergia, ir al inicio"
         >
-          {site.cta.label}
-          <span
-            aria-hidden
-            className="text-gold transition-transform duration-300 group-hover/cta:translate-x-0.5"
-          >
-            →
-          </span>
+          <span className="zs-tick h-5" />
+          <Wordmark tone="dark" />
         </a>
-
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="group flex h-9 w-9 flex-col items-end justify-center gap-1.5 lg:hidden"
           aria-label="Abrir menú"
           aria-expanded={open}
+          className="group flex items-center gap-2.5 rounded-full border border-gold/30 px-4 py-2 text-[0.68rem] uppercase tracking-[0.2em] text-ivory/80 transition-colors duration-300 hover:border-gold/60 hover:text-ivory"
         >
-          <span className="h-px w-7 bg-ivory transition-colors duration-300 group-hover:bg-gold" />
-          <span className="h-px w-5 bg-ivory transition-all duration-300 group-hover:w-7 group-hover:bg-gold" />
+          Menú
+          <span className="flex flex-col gap-[3px]">
+            <span className="h-px w-4 bg-gold" />
+            <span className="h-px w-2.5 bg-gold transition-all duration-300 group-hover:w-4" />
+          </span>
         </button>
-      </Container>
+      </div>
 
       <div
         className={`fixed inset-0 z-50 flex flex-col bg-night transition-[opacity,visibility] duration-300 lg:hidden ${
-          open ? "visible opacity-100" : "invisible opacity-0"
+          open
+            ? "visible opacity-100"
+            : "pointer-events-none invisible opacity-0"
         }`}
       >
         <span
-          aria-hidden
+          aria-hidden="true"
           className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent"
         />
 
-        <Container className="flex h-20 items-center justify-between">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 sm:px-8">
           <a
             href="#inicio"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3"
+            className="flex items-center gap-2.5"
           >
-            <span className="zs-tick h-6" />
+            <span className="zs-tick h-5" />
             <Wordmark tone="dark" />
           </a>
           <button
@@ -122,9 +111,9 @@ export function Navbar() {
             <span className="absolute left-1/2 top-1/2 h-px w-7 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-ivory" />
             <span className="absolute left-1/2 top-1/2 h-px w-7 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-ivory" />
           </button>
-        </Container>
+        </div>
 
-        <Container className="flex flex-1 flex-col justify-center">
+        <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 sm:px-8">
           <nav className="flex flex-col">
             {site.nav.map((item) => (
               <a
@@ -135,8 +124,8 @@ export function Navbar() {
               >
                 {item.label}
                 <span
-                  aria-hidden
-                  className="text-base text-gold opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 -translate-x-2"
+                  aria-hidden="true"
+                  className="-translate-x-2 text-base text-gold opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                 >
                   →
                 </span>
@@ -150,17 +139,17 @@ export function Navbar() {
             className="mt-10 inline-flex w-fit items-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-medium text-night"
           >
             {site.cta.label}
-            <span aria-hidden>→</span>
+            <span aria-hidden="true">→</span>
           </a>
-        </Container>
+        </div>
 
-        <Container className="pb-10">
+        <div className="mx-auto w-full max-w-6xl px-6 pb-10 sm:px-8">
           <div className="flex flex-col gap-1.5 text-[0.7rem] uppercase tracking-[0.34em] text-gold/70">
             {taglineWords.map((word) => (
               <span key={word}>{word}</span>
             ))}
           </div>
-        </Container>
+        </div>
       </div>
     </header>
   );

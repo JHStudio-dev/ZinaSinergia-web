@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-[100svh] scroll-mt-24 items-center overflow-hidden bg-night pt-24 pb-16"
+      className="relative flex min-h-[100svh] scroll-mt-24 items-center overflow-hidden bg-night pt-32 pb-16"
     >
       <div aria-hidden className="zs-hero__texture" />
       <div aria-hidden className="zs-hero__glow" />

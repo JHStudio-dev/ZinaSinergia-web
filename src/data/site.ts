@@ -14,7 +14,7 @@ export const site = {
     { label: "Contacto", href: "#contacto" },
   ],
   cta: {
-    label: "Conectar",
+    label: "Hablemos",
     href: "#contacto",
   },
   hero: {
