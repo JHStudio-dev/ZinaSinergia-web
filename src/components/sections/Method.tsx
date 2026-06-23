@@ -20,8 +20,8 @@ export function Method() {
         <div className="mt-16 flex flex-col gap-14 sm:mt-20 sm:gap-16">
           {method.steps.map((step, i) => (
             <AnimatedReveal key={step.title} delay={i * 110}>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-10 lg:gap-16">
-                <h3 className="shrink-0 font-display text-5xl leading-[0.95] text-gold sm:text-6xl lg:text-7xl">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-baseline lg:gap-16">
+                <h3 className="shrink-0 font-display text-[2.6rem] leading-[0.97] text-gold sm:text-6xl lg:text-7xl">
                   {step.title}
                 </h3>
                 <p className="max-w-xl text-base leading-relaxed text-ivory/70 sm:text-lg">

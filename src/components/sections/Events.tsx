@@ -21,7 +21,7 @@ export function Events() {
         <div className="zs-events__overlay" />
       </div>
 
-      <Container className="relative z-10">
+      <Container className="zs-events__content relative z-10">
         <div className="max-w-xl lg:max-w-2xl">
           <AnimatedReveal>
             <span className="zs-events__eyebrow">

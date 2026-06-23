@@ -70,7 +70,7 @@ export function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <AnimatedReveal>
-              <h1 className="font-display text-[3rem] font-medium leading-[1.02] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
+              <h1 className="font-display text-[2.6rem] font-medium leading-[1.03] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
                 <span className="block">{hero.title.line1}</span>
                 <span className="block">
                   {hero.title.line2}{" "}
