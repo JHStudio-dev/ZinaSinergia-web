@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { site } from "@/data/site";
 
@@ -9,19 +9,9 @@ const taglineWords = site.brand.tagline
   .map((part) => part.trim())
   .filter(Boolean);
 
-const useIsoLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
-
-type Snapshot = { brand?: DOMRect; nav?: DOMRect };
-
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  const brandRef = useRef<HTMLAnchorElement>(null);
-  const navRef = useRef<HTMLElement>(null);
-  const prevRef = useRef<Snapshot | null>(null);
-  const animsRef = useRef<Animation[]>([]);
 
   useEffect(() => {
     const onScroll = () =>
@@ -30,51 +20,6 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    const onResize = () => {
-      prevRef.current = {
-        brand: brandRef.current?.getBoundingClientRect(),
-        nav: navRef.current?.getBoundingClientRect(),
-      };
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  useIsoLayoutEffect(() => {
-    const last: Snapshot = {
-      brand: brandRef.current?.getBoundingClientRect(),
-      nav: navRef.current?.getBoundingClientRect(),
-    };
-    const first = prevRef.current;
-    prevRef.current = last;
-
-    if (!first) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    animsRef.current.forEach((anim) => anim.cancel());
-    animsRef.current = [];
-
-    const flip = (el: HTMLElement | null, a?: DOMRect, b?: DOMRect) => {
-      if (!el || !a || !b || !a.width || !b.width) return;
-      const dx = a.left - b.left;
-      const dy = a.top - b.top;
-      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
-      animsRef.current.push(
-        el.animate(
-          [
-            { transform: `translate(${dx}px, ${dy}px)` },
-            { transform: "translate(0px, 0px)" },
-          ],
-          { duration: 520, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
-        ),
-      );
-    };
-
-    flip(brandRef.current, first.brand, last.brand);
-    flip(navRef.current, first.nav, last.nav);
-  }, [scrolled]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -87,31 +32,28 @@ export function Navbar() {
     <header className="zs-navbar">
       <div className="zs-navbar__shell" data-scrolled={scrolled}>
         <a
-          ref={brandRef}
           href="#inicio"
           className="zs-navbar__brand"
           aria-label="Zina Sinergia, ir al inicio"
         >
+          <span className="zs-tick h-5" />
           <Wordmark tone="dark" />
         </a>
 
-        <span className="zs-navbar__orbital" aria-hidden="true">
-          <span className="zs-navbar__orbital-node" />
-        </span>
-
-        <nav ref={navRef} className="zs-navbar__links">
+        <nav className="zs-navbar__links">
           {site.nav.map((item) => (
             <a key={item.href} href={item.href} className="zs-navbar__link">
               {item.label}
             </a>
           ))}
-          <a href={site.cta.href} className="zs-navbar__cta">
-            {site.cta.label}
-            <span aria-hidden="true" className="text-gold">
-              →
-            </span>
-          </a>
         </nav>
+
+        <a href={site.cta.href} className="zs-navbar__cta">
+          {site.cta.label}
+          <span aria-hidden="true" className="text-gold">
+            →
+          </span>
+        </a>
       </div>
 
       <div className="zs-navbar__mobile">

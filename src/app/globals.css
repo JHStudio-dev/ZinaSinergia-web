@@ -425,28 +425,32 @@
     pointer-events: auto;
     position: relative;
     display: none;
-    flex-direction: column;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 0.5rem;
-    width: max-content;
-    max-width: min(92vw, 56rem);
-    margin: 1rem auto 0;
-    padding: 0.8rem 2rem 0.68rem;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 62rem;
+    margin-top: 1rem;
+    margin-inline: auto;
+    padding: 1.05rem 2.25rem;
     border-radius: 1.25rem;
     border: 1px solid color-mix(in srgb, var(--color-gold) 22%, transparent);
-    background: color-mix(in srgb, var(--color-night) 70%, transparent);
+    background: color-mix(in srgb, var(--color-night) 72%, transparent);
     backdrop-filter: blur(16px) saturate(125%);
     -webkit-backdrop-filter: blur(16px) saturate(125%);
     box-shadow: 0 22px 60px -34px rgba(0, 0, 0, 0.85);
     transition:
-      border-radius 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      margin-top 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      padding 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      border-radius 0.55s cubic-bezier(0.22, 1, 0.36, 1),
       background-color 0.5s ease,
       border-color 0.5s ease;
   }
 
   @media (min-width: 1024px) {
     .zs-navbar__shell {
-      display: flex;
+      display: grid;
     }
   }
 
@@ -466,13 +470,10 @@
   }
 
   .zs-navbar__shell[data-scrolled="true"] {
-    flex-direction: row;
-    justify-content: space-between;
     gap: 2rem;
-    width: 100%;
     max-width: 100rem;
-    margin: 0 auto;
-    padding: 0.85rem clamp(1.5rem, 4vw, 3rem);
+    margin-top: 0;
+    padding: 0.7rem clamp(1.5rem, 4vw, 3rem);
     border-radius: 0;
     border-color: transparent transparent
       color-mix(in srgb, var(--color-ivory) 10%, transparent) transparent;
@@ -483,57 +484,15 @@
     opacity: 1;
   }
 
-  .zs-navbar__shell[data-scrolled="true"] .zs-navbar__orbital {
-    display: none;
-  }
-
-  .zs-navbar__orbital {
-    display: flex;
+  .zs-navbar__brand {
+    justify-self: start;
+    display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    width: 14rem;
-    transition: opacity 0.35s ease;
-  }
-
-  .zs-navbar__orbital::before,
-  .zs-navbar__orbital::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      color-mix(in srgb, var(--color-gold) 50%, transparent)
-    );
-  }
-
-  .zs-navbar__orbital::after {
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--color-gold) 50%, transparent),
-      transparent
-    );
-  }
-
-  .zs-navbar__orbital-node {
-    position: relative;
-    width: 7px;
-    height: 7px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 1px solid color-mix(in srgb, var(--color-gold) 65%, transparent);
-  }
-
-  .zs-navbar__orbital-node::after {
-    content: "";
-    position: absolute;
-    inset: 1.5px;
-    border-radius: 50%;
-    background: var(--color-gold);
-    opacity: 0.65;
   }
 
   .zs-navbar__links {
+    justify-self: center;
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -571,10 +530,10 @@
   }
 
   .zs-navbar__cta {
+    justify-self: end;
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    margin-left: 0.4rem;
     padding: 0.4rem 1.05rem;
     border-radius: 999px;
     border: 1px solid color-mix(in srgb, var(--color-gold) 42%, transparent);
