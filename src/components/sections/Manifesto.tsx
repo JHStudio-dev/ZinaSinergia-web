@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/data/site";
@@ -12,34 +11,38 @@ export function Manifesto() {
       className="scroll-mt-24 bg-night py-28 sm:py-36 lg:py-44"
     >
       <Container>
-        <AnimatedReveal>
-          <h2 className="max-w-4xl font-display text-[2.4rem] font-medium leading-[1.12] tracking-tight text-ivory sm:text-5xl lg:text-[3.4rem]">
-            {manifesto.phrase}{" "}
-            <span className="italic text-gold">{manifesto.accent}</span>
-          </h2>
-        </AnimatedReveal>
+        <div className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-20">
+          <div className="lg:col-span-6">
+            <AnimatedReveal>
+              <h2 className="font-display text-[2.4rem] font-medium leading-[1.12] tracking-tight text-ivory sm:text-5xl lg:text-[3.3rem]">
+                {manifesto.phrase}{" "}
+                <span className="italic text-gold">{manifesto.accent}</span>
+              </h2>
+            </AnimatedReveal>
 
-        <AnimatedReveal delay={140}>
-          <p className="mt-9 max-w-xl text-base leading-relaxed text-ivory/65 sm:text-lg lg:ml-auto">
-            {manifesto.text}
-          </p>
-        </AnimatedReveal>
-
-        <AnimatedReveal delay={220}>
-          <div className="zs-flow mt-16 sm:mt-20">
-            {manifesto.sequence.map((step, index) => (
-              <Fragment key={step}>
-                {index > 0 ? (
-                  <span className="zs-flow__line" aria-hidden="true" />
-                ) : null}
-                <span className="zs-flow__step">
-                  <span className="zs-flow__node" aria-hidden="true" />
-                  {step}
-                </span>
-              </Fragment>
-            ))}
+            <AnimatedReveal delay={140}>
+              <p className="mt-8 max-w-md text-base leading-relaxed text-ivory/65 sm:text-lg">
+                {manifesto.text}
+              </p>
+            </AnimatedReveal>
           </div>
-        </AnimatedReveal>
+
+          <div className="lg:col-span-6">
+            <AnimatedReveal delay={200}>
+              <ul className="zs-flow">
+                {manifesto.sequence.map((step) => (
+                  <li key={step.word} className="zs-flow__item">
+                    <span className="zs-flow__node" aria-hidden="true" />
+                    <div className="zs-flow__body">
+                      <span className="zs-flow__word">{step.word}</span>
+                      <span className="zs-flow__meaning">{step.meaning}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </AnimatedReveal>
+          </div>
+        </div>
       </Container>
     </section>
   );

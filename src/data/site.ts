@@ -33,7 +33,15 @@ export const site = {
     phrase: "Antes de avanzar, hay que volver a",
     accent: "escucharse.",
     text: "Zina Sinergia acompaña a mujeres que quieren transformar claridad en decisiones, liderazgo y acción, desde espacios de mentoría, conferencias y experiencias de crecimiento.",
-    sequence: ["Escucha", "Claridad", "Dirección", "Acción"],
+    sequence: [
+      { word: "Escucha", meaning: "Volver a ti y reconocer desde dónde partes." },
+      { word: "Claridad", meaning: "Ordenar tu visión y ver el siguiente paso." },
+      { word: "Dirección", meaning: "Elegir hacia dónde avanzar, y por qué." },
+      {
+        word: "Acción",
+        meaning: "Transformar la claridad en decisiones y movimiento.",
+      },
+    ],
   },
   about: {
     heading: "Acompaño a mujeres que están listas para reencontrarse y crecer.",
