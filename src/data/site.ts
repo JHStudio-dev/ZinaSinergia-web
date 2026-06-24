@@ -29,6 +29,12 @@ export const site = {
     secondaryCta: { label: "Ver los servicios", href: "#servicios" },
     aside: "Mujeres que lideran su camino",
   },
+  manifesto: {
+    phrase: "Antes de avanzar, hay que volver a",
+    accent: "escucharse.",
+    text: "Zina Sinergia acompaña a mujeres que quieren transformar claridad en decisiones, liderazgo y acción, desde espacios de mentoría, conferencias y experiencias de crecimiento.",
+    sequence: ["Escucha", "Claridad", "Dirección", "Acción"],
+  },
   about: {
     heading: "Acompaño a mujeres que están listas para reencontrarse y crecer.",
     lead: "Creo en algo simple: cuando una mujer se escucha de verdad, encuentra la claridad para avanzar.",

@@ -414,6 +414,77 @@
     pointer-events: none;
   }
 
+  .zs-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .zs-flow__step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--color-ivory);
+    white-space: nowrap;
+  }
+
+  .zs-flow__node {
+    position: relative;
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--color-gold) 70%, transparent);
+  }
+
+  .zs-flow__node::after {
+    content: "";
+    position: absolute;
+    inset: 1.5px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    opacity: 0.7;
+  }
+
+  .zs-flow__line {
+    width: 1px;
+    height: 1.75rem;
+    margin-left: 3px;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-gold) 50%, transparent),
+      color-mix(in srgb, var(--color-gold) 12%, transparent)
+    );
+  }
+
+  @media (min-width: 640px) {
+    .zs-flow {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .zs-flow__step {
+      font-size: 1.6rem;
+    }
+
+    .zs-flow__line {
+      width: auto;
+      flex: 1;
+      min-width: 2.5rem;
+      height: 1px;
+      margin-left: 0;
+      background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-gold) 45%, transparent),
+        color-mix(in srgb, var(--color-gold) 18%, transparent)
+      );
+    }
+  }
+
   .zs-navbar {
     position: fixed;
     inset: 0 0 auto 0;

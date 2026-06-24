@@ -5,7 +5,7 @@ import { Community } from "@/components/sections/Community";
 import { Contact } from "@/components/sections/Contact";
 import { Events } from "@/components/sections/Events";
 import { Hero } from "@/components/sections/Hero";
-import { ImpactAreas } from "@/components/sections/ImpactAreas";
+import { Manifesto } from "@/components/sections/Manifesto";
 import { Method } from "@/components/sections/Method";
 import { Services } from "@/components/sections/Services";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -16,13 +16,13 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <ImpactAreas />
+        <Manifesto />
         <Method />
         <Services />
         <Events />
         <Testimonials />
         <Community />
+        <About />
         <Contact />
       </main>
       <Footer />
