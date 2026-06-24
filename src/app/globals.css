@@ -505,6 +505,55 @@
     }
   }
 
+  .zs-glass {
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-ivory) 12%, transparent);
+    background:
+      radial-gradient(
+        130% 90% at 12% -10%,
+        color-mix(in srgb, var(--color-gold) 8%, transparent),
+        transparent 55%
+      ),
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--color-ivory) 7%, transparent),
+        color-mix(in srgb, var(--color-ivory) 1%, transparent) 60%
+      ),
+      color-mix(in srgb, var(--color-night) 55%, transparent);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--color-ivory) 14%, transparent),
+      inset 0 -1px 0 color-mix(in srgb, var(--color-ivory) 4%, transparent),
+      0 26px 60px -34px rgba(0, 0, 0, 0.7);
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+  .zs-glass--gold {
+    border-color: color-mix(in srgb, var(--color-gold) 28%, transparent);
+  }
+
+  .zs-glass:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-gold) 36%, transparent);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--color-ivory) 20%, transparent),
+      inset 0 -1px 0 color-mix(in srgb, var(--color-ivory) 5%, transparent),
+      0 34px 72px -30px rgba(0, 0, 0, 0.82);
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .zs-glass {
+      background: color-mix(in srgb, var(--color-night) 92%, var(--color-carbon));
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+  }
+
   .zs-navbar {
     position: fixed;
     inset: 0 0 auto 0;

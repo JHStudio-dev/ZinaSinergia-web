@@ -48,7 +48,7 @@ export function Services() {
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           <AnimatedReveal className="lg:col-span-2">
-            <article className="rounded-2xl border border-gold/30 bg-night/40 p-8 sm:p-12">
+            <article className="zs-glass zs-glass--gold p-8 sm:p-12">
               <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-14">
                 <div>
                   <span className="text-xs uppercase tracking-[0.24em] text-gold">
@@ -86,7 +86,7 @@ export function Services() {
           </AnimatedReveal>
 
           <AnimatedReveal>
-            <article className="flex h-full flex-col rounded-2xl border border-gold/20 bg-[color-mix(in_srgb,var(--color-gold)_5%,var(--color-night))] p-8 sm:p-10">
+            <article className="zs-glass zs-glass--gold flex h-full flex-col p-8 sm:p-10">
               <h3 className="font-display text-2xl text-ivory sm:text-3xl">
                 {grupal.title}
               </h3>
@@ -107,7 +107,7 @@ export function Services() {
           </AnimatedReveal>
 
           <AnimatedReveal>
-            <article className="flex h-full flex-col rounded-2xl border border-ivory/10 bg-carbon/40 p-8 sm:p-10">
+            <article className="zs-glass flex h-full flex-col p-8 sm:p-10">
               <h3 className="font-display text-2xl text-ivory sm:text-3xl">
                 {empresarial.title}
               </h3>
