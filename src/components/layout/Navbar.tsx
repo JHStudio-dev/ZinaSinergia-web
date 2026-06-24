@@ -1,6 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import {
+  AnimatePresence,
+  MotionConfig,
+  motion,
+  type Transition,
+} from "motion/react";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { site } from "@/data/site";
 
@@ -8,6 +14,12 @@ const taglineWords = site.brand.tagline
   .split(".")
   .map((part) => part.trim())
   .filter(Boolean);
+
+const morph: Transition = {
+  type: "tween",
+  duration: 0.55,
+  ease: [0.22, 1, 0.36, 1],
+};
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,31 +42,53 @@ export function Navbar() {
 
   return (
     <header className="zs-navbar">
-      <div className="zs-navbar__shell" data-scrolled={scrolled}>
-        <a
-          href="#inicio"
-          className="zs-navbar__brand"
-          aria-label="Zina Sinergia, ir al inicio"
+      <MotionConfig reducedMotion="user" transition={morph}>
+        <motion.div
+          layout
+          className="zs-navbar__shell"
+          data-scrolled={scrolled}
+          animate={{ borderRadius: scrolled ? 0 : 20 }}
         >
-          <span className="zs-tick h-5" />
-          <Wordmark tone="dark" />
-        </a>
+          <motion.a
+            layout="position"
+            href="#inicio"
+            className="zs-navbar__brand"
+            aria-label="Zina Sinergia, ir al inicio"
+          >
+            <span className="zs-tick h-5" />
+            <Wordmark tone="dark" />
+          </motion.a>
 
-        <nav className="zs-navbar__links">
-          {site.nav.map((item) => (
-            <a key={item.href} href={item.href} className="zs-navbar__link">
-              {item.label}
+          <AnimatePresence initial={false}>
+            {!scrolled && (
+              <motion.span
+                key="orbital"
+                className="zs-navbar__orbital"
+                aria-hidden="true"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <span className="zs-navbar__orbital-node" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+
+          <motion.nav layout="position" className="zs-navbar__links">
+            {site.nav.map((item) => (
+              <a key={item.href} href={item.href} className="zs-navbar__link">
+                {item.label}
+              </a>
+            ))}
+            <a href={site.cta.href} className="zs-navbar__cta">
+              {site.cta.label}
+              <span aria-hidden="true" className="text-gold">
+                →
+              </span>
             </a>
-          ))}
-        </nav>
-
-        <a href={site.cta.href} className="zs-navbar__cta">
-          {site.cta.label}
-          <span aria-hidden="true" className="text-gold">
-            →
-          </span>
-        </a>
-      </div>
+          </motion.nav>
+        </motion.div>
+      </MotionConfig>
 
       <div className="zs-navbar__mobile">
         <a
