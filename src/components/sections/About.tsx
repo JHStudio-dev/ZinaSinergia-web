@@ -44,11 +44,11 @@ export function About() {
         </div>
 
         <AnimatedReveal delay={120}>
-          <figure className="mt-16 max-w-3xl rounded-2xl bg-champagne px-8 py-10 text-carbon sm:px-12 sm:py-14">
-            <p className="font-display text-2xl leading-snug text-carbon sm:text-3xl">
+          <figure className="mt-16 max-w-3xl border-l-2 border-gold/40 pl-7 sm:mt-20 sm:pl-9">
+            <blockquote className="font-display text-[1.7rem] italic leading-snug text-ivory/90 sm:text-3xl">
               {about.manifesto}
-            </p>
-            <figcaption className="mt-7 flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-carbon/60">
+            </blockquote>
+            <figcaption className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-ivory/55">
               <span className="h-px w-8 bg-gold" aria-hidden />
               {about.signature}
             </figcaption>
