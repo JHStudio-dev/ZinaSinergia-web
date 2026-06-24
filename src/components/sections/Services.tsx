@@ -1,6 +1,7 @@
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { GlassCard } from "@/components/ui/GlassCard";
 import { mailtoUrl, site, whatsappUrl } from "@/data/site";
 
 function TopicList({
@@ -48,7 +49,7 @@ export function Services() {
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           <AnimatedReveal className="lg:col-span-2">
-            <article className="zs-glass zs-glass--gold p-8 sm:p-12">
+            <GlassCard className="zs-glass--gold p-8 sm:p-12">
               <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-14">
                 <div>
                   <span className="text-xs uppercase tracking-[0.24em] text-gold">
@@ -82,11 +83,11 @@ export function Services() {
                   </div>
                 </div>
               </div>
-            </article>
+            </GlassCard>
           </AnimatedReveal>
 
           <AnimatedReveal>
-            <article className="zs-glass zs-glass--gold flex h-full flex-col p-8 sm:p-10">
+            <GlassCard className="zs-glass--gold h-full p-8 sm:p-10">
               <h3 className="font-display text-2xl text-ivory sm:text-3xl">
                 {grupal.title}
               </h3>
@@ -103,11 +104,11 @@ export function Services() {
                   {grupal.cta.label}
                 </Button>
               </div>
-            </article>
+            </GlassCard>
           </AnimatedReveal>
 
           <AnimatedReveal>
-            <article className="zs-glass flex h-full flex-col p-8 sm:p-10">
+            <GlassCard className="h-full p-8 sm:p-10">
               <h3 className="font-display text-2xl text-ivory sm:text-3xl">
                 {empresarial.title}
               </h3>
@@ -123,7 +124,7 @@ export function Services() {
                   </span>
                 </Button>
               </div>
-            </article>
+            </GlassCard>
           </AnimatedReveal>
         </div>
       </Container>
