@@ -37,7 +37,10 @@ export function About() {
             <AnimatedReveal delay={160}>
               <div className="zs-portrait mx-auto aspect-[4/5] w-full max-w-sm lg:mx-0 lg:ml-auto">
                 <span className="zs-grain absolute inset-0" aria-hidden />
-                <PortraitImage src={about.photo} alt="Zina Sinergia" />
+                <PortraitImage
+                  src={about.photo}
+                  alt="Retrato de Zina, mentora y conferencista de Zina Sinergia"
+                />
               </div>
             </AnimatedReveal>
           </div>

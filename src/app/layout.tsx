@@ -16,26 +16,58 @@ const instrument = Instrument_Sans({
   display: "swap",
 });
 
+const siteUrl = "https://zinasinergia.com";
+const siteTitle =
+  "Zina Sinergia | Mentorías, conferencias y liderazgo femenino";
 const siteDescription =
-  "Marca personal de Zina Sinergia: coaching, conferencias y acompañamiento humano para reconectar con tu propósito y avanzar con intención.";
+  "Zina Sinergia acompaña a mujeres a fortalecer su claridad, liderazgo y propósito a través de mentorías, conferencias y experiencias de crecimiento.";
+const ogImage = "/images/zina-confe.jpg";
 
 export const metadata: Metadata = {
-  title: "Zina Sinergia - Conecta. Inspira. Transforma.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
   description: siteDescription,
   keywords: [
     "Zina Sinergia",
-    "coaching",
-    "conferencias",
+    "mentorías para mujeres",
+    "liderazgo femenino",
+    "conferencista en Honduras",
+    "coaching para mujeres",
     "crecimiento personal",
-    "transformación",
-    "desarrollo personal",
+    "propósito",
+    "claridad",
+    "mentoría individual",
+    "mentoría grupal",
+    "conferencias para mujeres",
   ],
+  authors: [{ name: "Zina Sinergia" }],
+  creator: "Zina Sinergia",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
-    locale: "es_ES",
+    locale: "es_HN",
+    url: siteUrl,
     siteName: "Zina Sinergia",
-    title: "Zina Sinergia - Conecta. Inspira. Transforma.",
+    title: siteTitle,
     description: siteDescription,
+    images: [
+      {
+        url: ogImage,
+        alt: "Zina Sinergia: mentorías, conferencias y liderazgo femenino",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: [ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
