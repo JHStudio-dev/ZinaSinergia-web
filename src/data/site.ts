@@ -244,7 +244,7 @@ export const site = {
   },
   contact: {
     whatsapp: "50433466618",
-    instagram: "zina.sinergia",
+    instagram: "https://www.instagram.com/zina.sinergia/",
     email: "contacto@zinasinergia.com",
   },
 } as const;
