@@ -21,7 +21,7 @@ const siteTitle =
   "Zina Sinergia | Mentorías, conferencias y liderazgo femenino";
 const siteDescription =
   "Zina Sinergia acompaña a mujeres a fortalecer su claridad, liderazgo y propósito a través de mentorías, conferencias y experiencias de crecimiento.";
-const ogImage = "/images/zina-confe.jpg";
+const ogImage = "/og-zina-sinergia.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -55,6 +55,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImage,
+        width: 1200,
+        height: 630,
         alt: "Zina Sinergia: mentorías, conferencias y liderazgo femenino",
       },
     ],
