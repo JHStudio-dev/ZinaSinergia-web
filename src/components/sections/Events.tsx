@@ -11,7 +11,7 @@ export function Events() {
     <section id="eventos" className="zs-events scroll-mt-24">
       <div className="zs-events__backdrop" aria-hidden="true">
         <Image
-          src="/images/zina-conferencia.png"
+          src="/images/zina-confe.jpg"
           alt="Zina en conferencia"
           fill
           sizes="100vw"
