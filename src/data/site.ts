@@ -243,8 +243,8 @@ export const site = {
     credit: "Diseño y desarrollo por Darkward Studio",
   },
   contact: {
-    whatsapp: "",
-    instagram: "",
+    whatsapp: "50433466618",
+    instagram: "zina.sinergia",
     email: "contacto@zinasinergia.com",
   },
 } as const;
