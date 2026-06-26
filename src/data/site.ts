@@ -7,10 +7,10 @@ export const site = {
   },
   nav: [
     { label: "Inicio", href: "#inicio" },
-    { label: "Sobre Zina", href: "#sobre-zina" },
     { label: "Método", href: "#metodo" },
     { label: "Servicios", href: "#servicios" },
     { label: "Eventos", href: "#eventos" },
+    { label: "Sobre Zina", href: "#sobre-zina" },
     { label: "Contacto", href: "#contacto" },
   ],
   cta: {
